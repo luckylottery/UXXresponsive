@@ -1,0 +1,482 @@
+<template>
+  <b-container class="mt-4">
+    <!-- up container -->
+    <b-row>
+      <b-col md="9"  class="left-container">
+        <div class="home-header px-3 box-background">
+          <div>
+            <span class="header-title">Circulating UXX</span
+            ><span v-text="stats.circulating"></span>
+          </div>
+          <div>
+            <span class="header-title">Staked</span
+            ><span v-text="stats.staked"></span>
+          </div>
+          <div>
+            <span class="header-title">Mining</span
+            ><span v-text="stats.mining"></span>
+          </div>
+          <div>
+            <span class="header-title">Duration</span
+            ><span v-text="stats.duration"></span>
+          </div>
+          <div>
+            <span class="header-title">Yield</span
+            ><span v-text="stats.yield"></span>
+          </div>
+        </div>
+
+        <div class="yield-box box-background">
+          <div class="title">yield Curve</div>
+          
+          <div class="range-header d-flex justify-content-between px-4">
+            <span>INFLATION</span>
+            <div class="d-flex">
+              <!-- <span
+                style="border: 2px solid gray; border-radius: 16px; width: 50px; line-height: 1.9"
+                class="me-3"
+                >{{ inflationValue }}%</span> -->
+              <span
+                style="border: 2px solid gray; border-radius: 16px; width: 50px; line-height: 1.9"
+                class="me-3"
+                >10%</span>
+              <div class="range-slider bg-ruler">
+                <img class="ruler-image" src="@/assets/images/ruler.svg" width="250">
+                <!-- <img class="ruler-pointer-image" src="@/assets/images/ruler_pointer.svg"> -->
+                <span class="ruler-pointer-value" :style=leftValue>
+                  {{inflationValue}}
+                </span>
+                <b-form-input
+                  id="inflation-range myRange"
+                  class="slider"
+                  style="border-radius: 10px; position: relative; top: -8px; padding: 5px;"
+                  v-model="inflationValue"
+                  type="range"
+                  min="0"
+                  max="100"
+                ></b-form-input>
+              </div>
+            </div>
+            <span style="color: #6d1eda">STAKING</span>
+          </div>
+
+          <div class="px-3 pb-3">
+            <line-chart style="min-width: 912px">
+            </line-chart>
+            <div style="position: absolute; border-bottom: 1px solid gray; margin-left: 78px; width: 757px; bottom: 67px"></div>
+            <div class="chart-legend">
+              <span class="mx-3">Stake</span>
+              <svg height="10" width="30">
+                <line x1="0" y1="5" x2="30" y2="5" style="stroke:#8226FB;stroke-width:4" />
+              </svg>
+              <span class="mx-3">Yield</span>
+              <svg height="10" width="30">
+                <line x1="0" y1="5" x2="30" y2="5" style="stroke:#fff;stroke-width:4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </b-col>
+
+      <b-col md="3" class="p-0">
+        <div class="box box-background">
+          <div class="title">liquidity</div>
+          <div>
+            <table class="uxxTable">
+              <tbody>
+                <tr>
+                  <td class="lab1">Liquid</td>
+                  <td class="lab2">15,000,000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="lab1">Inflation</td>
+                  <td class="lab2">225,000</td>
+                  <td><button class="btn">Claim</button></td>
+                </tr>
+                <tr>
+                  <td class="lab1">Mining</td>
+                  <td class="lab2">1,000,000</td>
+                  <td><button class="btn">Claim</button></td>
+                </tr>
+                <tr>
+                  <td class="lab3">Unstaked</td>
+                  <td class="lab4">133,000</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="order-box box-background">
+          <div class="title">order Entry</div>
+          <div class="order-header">
+            <span class="title-single me-2">Single</span>
+            <toggle-button
+              :value=orderToggle
+              color="#D4B5FF"
+              @click="orderToggle = !orderToggle"
+            />
+            <span class="title-single">Multi</span>
+          </div>
+
+          <div class="order-container">
+            <b-row class="py-2 order-row">
+              <b-col class="order-name">Maturity</b-col>
+              <b-col :class="orderButtonClass(1)"  @click="clickOrderButton(1)"><span>*Month</span></b-col>
+              <b-col :class="orderButtonClass(2)"  @click="clickOrderButton(2)"><span>*Year</span></b-col>
+            </b-row>
+            <b-row class="py-2 order-row">
+              <b-col class="order-name">Date</b-col>
+              <b-col :class="orderButtonClass(3)"  @click="clickOrderButton(3)"><span>19/12/2025</span></b-col>
+              <b-col :class="orderButtonClass(4)"  @click="clickOrderButton(4)"><span>4.23</span></b-col>
+            </b-row>
+            <b-row class="py-2 order-row">
+              <b-col class="order-name">Open Interest</b-col>
+              <b-col :class="orderButtonClass(5)"  @click="clickOrderButton(5)"><span>600,000</span></b-col>
+              <b-col :class="orderButtonClass(6)"  @click="clickOrderButton(6)"><span>1.5%</span></b-col>
+            </b-row>
+            <b-row class="py-2 order-row">
+              <b-col class="order-name">Daily Delta</b-col>
+              <b-col :class="orderButtonClass(7)"  @click="clickOrderButton(7)"><span>(5,000)</span></b-col>
+              <b-col :class="orderButtonClass(8)"  @click="clickOrderButton(8)"><span>0.135%</span></b-col>
+            </b-row>
+            <b-row class="py-2 order-row">
+              <b-col class="order-name">Yield / Exit Fee</b-col>
+              <b-col :class="orderButtonClass(9)"  @click="clickOrderButton(9)"><span>14.61%</span></b-col>
+              <b-col :class="orderButtonClass(10)"  @click="clickOrderButton(10)"><span>34.65%</span></b-col>
+            </b-row>
+            <b-row class="py-2 order-row">
+              <b-col class="order-name">Position</b-col>
+              <b-col :class="orderButtonClass(11)"  @click="clickOrderButton(11)"><span>20,000</span></b-col>
+              <b-col :class="orderButtonClass(12)"  @click="clickOrderButton(12)"><span>0.0500%</span></b-col>
+            </b-row>
+            <b-row class="py-2 order-row">
+              <b-col class="order-name">Quantity</b-col>
+              <b-col :class="orderButtonClass(13)"  @click="clickOrderButton(13)"><span>*Quantity</span></b-col>
+              <b-col :class="orderButtonClass(14)"  @click="clickOrderButton(14)"><span>0.0025%</span></b-col>
+            </b-row>
+          </div>
+
+          <div class="btn-group">
+            <button class="stake-btn">Stake</button>
+            <button class="stake-btn" style="background-color: rgba(109, 30, 218, 0.4)">Withdraw</button>
+          </div>
+        </div>
+      </b-col>
+    </b-row>
+
+    <!-- down container -->
+    <b-row>
+      <b-col md="9" class="left-container  box-background">
+        <div class="stake-box">
+          <div class="title">my Stakes</div>
+          <div class="stake-content">
+            <table class="stake-table">
+              <tbody>
+                <tr
+                  style="
+                    border-bottom: 2px solid #404040;
+                    margin-bottom: 5px;
+                    height: 25px;
+                  "
+                >
+                  <th class="first-cell">Contracts</th>
+                  <th>Maturity</th>
+                  <th>Time(Years)</th>
+                  <th>UXX</th>
+                  <th>Yield</th>
+                  <th>Exit Fee %</th>
+                  <th>Exit Fee UXX</th>
+                </tr>
+                <tr>
+                  <td class="first-cell">MARCH25</td>
+                  <td>30-Mar-25</td>
+                  <td>3.50</td>
+                  <td>100,000</td>
+                  <td>12.90%</td>
+                  <td>-30.51%</td>
+                  <td>(30,510)</td>
+                </tr>
+                <tr>
+                  <td class="first-cell">MARCH25</td>
+                  <td>30-Mar-25</td>
+                  <td>3.50</td>
+                  <td>100,000</td>
+                  <td>12.90%</td>
+                  <td>-30.51%</td>
+                  <td>(30,510)</td>
+                </tr>
+                <tr>
+                  <td class="first-cell">MARCH25</td>
+                  <td>30-Mar-25</td>
+                  <td>3.50</td>
+                  <td>100,000</td>
+                  <td>12.90%</td>
+                  <td>-30.51%</td>
+                  <td>(30,510)</td>
+                </tr>
+                <tr>
+                  <td class="first-cell">MARCH25</td>
+                  <td>30-Mar-25</td>
+                  <td>3.50</td>
+                  <td>100,000</td>
+                  <td>12.90%</td>
+                  <td>-30.51%</td>
+                  <td>(30,510)</td>
+                </tr>
+                <tr>
+                  <td class="first-cell">MARCH25</td>
+                  <td>30-Mar-25</td>
+                  <td>3.50</td>
+                  <td>100,000</td>
+                  <td>12.90%</td>
+                  <td>-30.51%</td>
+                  <td>(30,510)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </b-col>
+
+      <b-col md="3" class="p-0  box-background">
+        <div class="recent-box">
+          <div class="recent-title-container">
+            <span>recent Transactions</span>
+            <img src="@/assets/images/three_dot.svg" width="20px">
+          </div>
+          <div class="recent">
+            <table class="recent-table">
+              <tbody>
+                <tr style="border-bottom: 2px solid #404040; height: 30px">
+                  <th>Time</th>
+                  <th>Account</th>
+                  <th>Action</th>
+                  <th>UXX Gross</th>
+                  <th>Maturity</th>
+                </tr>
+                <tr>
+                  <td>09:25</td>
+                  <td>genesis1…</td>
+                  <td>STAKE</td>
+                  <td>100,000</td>
+                  <td>DEC26</td>
+                </tr>
+                <tr>
+                  <td>09:25</td>
+                  <td>genesis1…</td>
+                  <td>STAKE</td>
+                  <td>100,000</td>
+                  <td>DEC26</td>
+                </tr>
+                <tr>
+                  <td>09:25</td>
+                  <td>genesis1…</td>
+                  <td>STAKE</td>
+                  <td>100,000</td>
+                  <td>DEC26</td>
+                </tr>
+                <tr>
+                  <td>09:25</td>
+                  <td>genesis1…</td>
+                  <td>STAKE</td>
+                  <td>100,000</td>
+                  <td>DEC26</td>
+                </tr>
+                <tr>
+                  <td>09:25</td>
+                  <td>genesis1…</td>
+                  <td>STAKE</td>
+                  <td>100,000</td>
+                  <td>DEC26</td>
+                </tr>
+                <tr>
+                  <td>09:25</td>
+                  <td>genesis1…</td>
+                  <td>STAKE</td>
+                  <td>100,000</td>
+                  <td>DEC26</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </b-col>
+    </b-row>
+  </b-container>
+</template>
+
+<script>
+import Chart from "./Chart.vue";
+import LineChart from "./LineChart";
+
+export default {
+  data() {
+    return {
+      inflationValue: 0,
+      orderType: "Single",
+      stats: {
+        circulating: "40,000,000",
+        staked: "24,000,000",
+        mining: "33%",
+        duration: 5.125,
+        yield: "16.61%",
+      },
+      initialGraphData: [
+        {
+          t: 0.5,
+          st: 2.5,
+          ytstake: 13.13,
+          ryt: -0.07,
+        },
+        {
+          t: 1,
+          st: 2.5,
+          ytstake: 14.03,
+          ryt: 0.82,
+        },
+        {
+          t: 1.5,
+          st: 2.5,
+          ytstake: 14.98,
+          ryt: 1.78,
+        },
+        {
+          t: 2,
+          st: 2.5,
+          ytstake: 16.01,
+          ryt: 2.8,
+        },
+        {
+          t: 2.5,
+          st: 2.5,
+          ytstake: 17.1,
+          ryt: 3.9,
+        },
+        {
+          t: 3,
+          st: 2.5,
+          ytstake: 18.27,
+          ryt: 5.06,
+        },
+        {
+          t: 3.5,
+          st: 2.5,
+          ytstake: 19.51,
+          ryt: 6.31,
+        },
+        {
+          t: 4,
+          st: 2.5,
+          ytstake: 20.85,
+          ryt: 7.64,
+        },
+        {
+          t: 4.5,
+          st: 2.5,
+          ytstake: 22.27,
+          ryt: 9.06,
+        },
+        {
+          t: 5,
+          st: 2.5,
+          ytstake: 23.79,
+          ryt: 10.58,
+        },
+        {
+          t: 5.5,
+          st: 2.5,
+          ytstake: 25.41,
+          ryt: 12.21,
+        },
+        {
+          t: 6,
+          st: 2.5,
+          ytstake: 27.14,
+          ryt: 13.94,
+        },
+        {
+          t: 6.5,
+          st: 2.5,
+          ytstake: 29,
+          ryt: 15.79,
+        },
+        {
+          t: 7,
+          st: 2.5,
+          ytstake: 30.98,
+          ryt: 17.77,
+        },
+        {
+          t: 7.5,
+          st: 2.5,
+          ytstake: 33.09,
+          ryt: 19.89,
+        },
+        {
+          t: 8,
+          st: 2.5,
+          ytstake: 33.35,
+          ryt: 22.14,
+        },
+        {
+          t: 8.5,
+          st: 2.5,
+          ytstake: 37.76,
+          ryt: 24.56,
+        },
+        {
+          t: 9,
+          st: 2.5,
+          ytstake: 40.34,
+          ryt: 27.13,
+        },
+        {
+          t: 9.5,
+          st: 2.5,
+          ytstake: 43.09,
+          ryt: 29.89,
+        },
+        {
+          t: 10,
+          st: 2.5,
+          ytstake: 46.03,
+          ryt: 32.83,
+        },
+      ],
+      orderToggle: true,
+      orderedNumber: [1],
+      leftValue: 'left: 0'
+    };
+  },
+  computed: {
+    graphData() {},
+  },
+  watch: {
+    inflationValue: function(val1, val2) {
+      this.leftValue = `left: ${val1 * 2.5}px`
+    }
+  },
+  methods: {
+    clickOrderButton : function(num) {
+      const found = this.orderedNumber.findIndex(e => e === num)
+      if (found == -1)
+        this.orderedNumber.push(num)
+      else
+        this.orderedNumber.splice(found, 1)
+    },
+    orderButtonClass: function (num) {
+      const found = this.orderedNumber.findIndex(e => e === num)
+      if (found == -1)
+        return 'order-button'
+      else
+        return 'order-button clicked-order-button'
+    }
+  },
+  components: {
+    LineChart,
+  },
+};
+</script>

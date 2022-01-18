@@ -1,0 +1,1612 @@
+#home {
+  overflow-x: hidden;
+  /* padding-bottom: 40px; */
+}
+
+.home-desktop {
+  padding: 0 80px;
+}
+
+.home-mobile {
+  padding: 0 12px;
+}
+
+.home-default {
+  padding: 0 32px;
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1100px;
+  }
+
+  #topSection {
+    padding-top: 155px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #topSection p {
+    /* @include fw-semibold; */
+    font-size: 20px;
+    margin: 16px 0 28px;
+  }
+
+  #topSection img {
+    margin-top: -50px;
+  }
+
+  #economicModel {
+    display: flex;
+    padding: 0 18px;
+    margin-top: 46px;
+  }
+
+  #economicModel .economicModel-image-wide {
+    z-index: 5;
+    width: 560px;
+    height: 394px;
+    filter: drop-shadow(0px 3px 16px rgba(0, 0, 0, 0.49));
+  }
+
+  #economicModel .economicModel-image {
+    margin-left: -12px;
+    width: 100vw;
+  }
+
+  #economicModel div {
+    padding-left: 227px;
+    padding-right: 27px;
+    width: 750px;
+    height: 451px;
+    border-radius: 1px;
+    background: var(--primary);
+    margin-left: -186px;
+    position: relative;
+  }
+
+  #economicModel h2 {
+    margin-top: 44px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 56px;
+  }
+
+  #economicModel p {
+    font-size: 18px;
+    margin-bottom: 22px;
+  }
+
+  #economicModel h4 {
+    font-size: 16px;
+    position: absolute;
+    bottom: 52px;
+    right: 40px;
+    font-weight: 700;
+  }
+
+  #economicModel h4 img {
+    width: 34px;
+    height: 34px;
+    vertical-align: text-top;
+    margin-left: 50px;
+    float: right;
+    margin-top: -10px;
+    cursor: pointer;
+  }
+
+  #tokenomics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 88px;
+  }
+
+  #tokenomics .grid {
+    display: grid;
+    grid-template-columns: 224.33px 224.33px 224.33px;
+    grid-template-rows: 137.67px 137.67px 137.67px;
+    font-size: 14px;
+    line-height: 56px;
+    text-align: left;
+  }
+
+  #tokenomics .grid div {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-family: Montserrat;
+  }
+
+  #tokenomics .grid div .learn-div {
+    position: absolute;
+    top: 20px;
+    left: 38px;
+  }
+
+  #tokenomics .grid div h3 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 900;
+  }
+
+  #tokenomics .grid div div {
+    color: rgba(252, 252, 252, 0.5);
+    line-height: 100%;
+  }
+
+  #tokenomics .grid .tech {
+    background-color: var(--primary);
+  }
+
+  #tokenomics .grid .tech div {
+    color: #d4b5ff;
+  }
+
+  .gridItemImage {
+    filter: invert(4%) sepia(29%) saturate(1482%) hue-rotate(209deg)
+      brightness(125%) contrast(101%);
+  }
+
+  #charts {
+    position: relative;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #charts .chart-background {
+    z-index: -1;
+    position: absolute;
+    background-color: var(--primary);
+    width: 300px;
+    height: 530px;
+    top: 0;
+    left: 48px;
+  }
+
+  #charts .arrow {
+    width: 59px;
+    height: 59px;
+    border-radius: 2px;
+    background: #161616;
+    border: 1px solid rgba(112, 112, 112, 0.87);
+    box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.63);
+
+    position: absolute;
+    top: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #charts .arrow div {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  #charts .arrow:hover {
+    box-shadow: 0px 0px 15px rgb(100 100 100 / 70%);
+  }
+
+  #charts .arrow div:hover {
+    border-right-color: #b179ff !important;
+    border-left-color: #b179ff !important;
+  }
+
+  #uxxInfo {
+    padding: 50px 0;
+    position: relative;
+    margin: 50px auto 0;
+    padding-left: 32px;
+  }
+
+  #linksBottom {
+    margin: 74px 0 0 120px;
+  }
+
+  #linksBottom div {
+    margin-top: 20px;
+  }
+
+  #linksBottom img {
+    width: 20px;
+    margin-right: 20px;
+  }
+
+  #footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  #footer span {
+    margin-right: 28px;
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: left;
+    color: #fcfcfc;
+    text-decoration: none;
+  }
+
+  #footer .footer-links span {
+    cursor: pointer;
+  }
+
+  .top-section {
+    max-width: 685px;
+  }
+
+  .top-section-h1 {
+    margin-top: 2px;
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 56px;
+  }
+
+  .btn1 {
+    font-family: Montserrat, sans-serif;
+    border-style: none;
+    padding: 0;
+    width: 156px;
+    height: 39px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #d4b5ff;
+    font-weight: 600;
+    background: var(--primary);
+    cursor: pointer;
+  }
+
+  .btn2 {
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    border: 1px solid #7525e5;
+    padding: 0;
+    width: 156px;
+    height: 39px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #fcfcfc;
+    font-weight: 600;
+    margin-left: 20px;
+    background: transparent;
+  }
+
+  .top-section-p {
+    text-indent: 6px;
+    max-width: 610px;
+  }
+
+  .btn-outline {
+    margin-left: 20px;
+  }
+
+  .dials-image {
+    margin-top: 142px !important;
+    width: 276px;
+  }
+
+  .infinite-image {
+    height: 416px;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 900;
+  }
+  .economical-hybrid {
+    padding: 0 18px;
+    margin: 0;
+    margin-left: -12px;
+    width: calc(100%);
+  }
+
+  .tokenomics-desktop {
+    justify-content: center;
+  }
+
+  .top-section-header {
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 56px;
+  }
+  .cursor {
+    cursor: pointer;
+  }
+
+  .desktop-right {
+    padding-right: 2px;
+    position: relative;
+  }
+
+  .desktop-top-right {
+    position: absolute;
+    top: 68px;
+    right: 30px;
+  }
+
+  .desktop-grid-iamge {
+    height: 28.8px;
+    margin-bottom: 12px;
+  }
+
+  .gridItem-h4 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+
+  .gridItem-p {
+    line-height: 24px;
+    margin-top: 8px;
+    width: 224px;
+  }
+
+  .learn-about {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    margin-top: 130px;
+    max-width: 1122px;
+    text-transform: uppercase;
+  }
+
+  .learn {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 900;
+  }
+
+  .learn-div {
+    background: var(--primary);
+    height: 14.4px;
+    margin-bottom: 16px;
+    width: 17px;
+  }
+
+  .charts-image {
+    height: auto;
+    max-width: 100%;
+    margin-top: 18px;
+    width: 930px;
+  }
+
+  .top-left0 {
+    left: 0;
+    top: 100%;
+  }
+
+  .left17 {
+    left: 17px;
+  }
+
+  .border-right {
+    border-right: 10px solid #555;
+  }
+
+  .border-left {
+    border-left: 10px solid #555;
+  }
+
+  .top100 {
+    top: 100%;
+  }
+
+  .uxx-info {
+    background: #040404;
+  }
+
+  .uxx-div {
+    background: var(--primary);
+    height: 14.4px;
+    margin-bottom: 12px;
+    width: 17px;
+  }
+
+  .uxx-h2 {
+    font-size: 32px;
+    line-height: 37px;
+    max-width: 500px;
+    font-weight: 900;
+  }
+
+  .uxx-h2-div {
+    /* max-width: min(550px, 50%); */
+    max-width: 650px;
+    margin-top: 40px;
+  }
+
+  .uxx-h2-div .uxx-text {
+    padding-right: 100px;
+  }
+
+  .uxx-h2-div .mprogress-bar {
+    margin-top: 40px;
+    background-color: #707070;
+    height: 4px;
+  }
+
+  .uxx-h2-div .mprogress-bar .progress-bar {
+    background-color: var(--primary);
+  }
+
+  .uxx-p-bold {
+    font-weight: bold;
+    line-height: 32px;
+  }
+
+  .uxx-p-top30 {
+    line-height: 32px;
+    margin-top: 30px;
+  }
+
+  .uxx-p-top34 {
+    line-height: 32px;
+    margin-top: 34px;
+  }
+
+  .uxx-info-image {
+    max-width: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 55px;
+    right: 0px;
+  }
+
+  .stay-div {
+    background: radial-gradient(#393939 0%, #040404 100%);
+    /* background: radial-gradient(ellipse at right top, #f9f9f9 0%, #aaa 50%, black 100%); */
+    z-index: -1;
+  }
+
+  .stay-flex {
+    background: black;
+    border-radius: 1px;
+    display: flex;
+    height: 543px;
+    margin: 50px auto 0;
+    position: relative;
+  }
+
+  .stay-flex .stay-bubble {
+    position: absolute;
+  }
+
+  .stay-flex .stay-background {
+    margin-left: 50px;
+  }
+
+  .stay-h3 {
+    font-size: 33px;
+    font-weight: 900;
+  }
+
+  .stay-margin-top {
+    height: 52px;
+    margin-top: 77px;
+    width: 226px;
+    background: var(--primary);
+    color: #d4b5ff;
+    font-weight: 600;
+    border-radius: 2px;
+    border-style: none;
+    cursor: pointer;
+  }
+
+  .stay-flex-max {
+    max-width: 50%;
+  }
+
+  .right-0 {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 760px) {
+  .wrapper {
+    margin: 0 auto;
+    max-width: 740px;
+  }
+
+  #topSection {
+    padding: 55px 12px 0;
+  }
+
+  #topSection p {
+    font-size: 20px;
+    margin: 16px 0 28px;
+  }
+
+  #topSection img {
+    margin-top: -50px;
+  }
+
+  #economicModel {
+    margin-top: 46px;
+  }
+
+  #economicModel .economicModel-image-wide {
+    filter: drop-shadow(0px 3px 16px rgba(0, 0, 0, 0.49));
+    width: 100%;
+  }
+
+  #economicModel .economicModel-image {
+    margin-left: -12px;
+    width: 100vw;
+  }
+
+  #economicModel div {
+    padding: 20px 30px;
+    height: 451px;
+    border-radius: 1px;
+    background: var(--primary);
+    position: relative;
+  }
+
+  #economicModel h2 {
+    margin-top: 44px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 56px;
+  }
+
+  #economicModel p {
+    font-size: 18px;
+    margin-bottom: 22px;
+  }
+
+  #economicModel h4 {
+    font-size: 16px;
+    position: absolute;
+    bottom: 52px;
+    right: 40px;
+    font-weight: 700;
+  }
+
+  #economicModel h4 img {
+    width: 34px;
+    height: 34px;
+    vertical-align: text-top;
+    margin-left: 50px;
+    float: right;
+    margin-top: -10px;
+    cursor: pointer;
+  }
+
+  #tokenomics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 88px;
+  }
+
+  #tokenomics .grid {
+    display: grid;
+    grid-template-columns: 224.33px 224.33px 224.33px;
+    grid-template-rows: 137.67px 137.67px 137.67px;
+    font-size: 14px;
+    line-height: 56px;
+    text-align: left;
+  }
+
+  #tokenomics .grid div {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-family: Montserrat;
+  }
+
+  #tokenomics .grid div .learn-div {
+    position: absolute;
+    top: 20px;
+    left: 38px;
+  }
+
+  #tokenomics .grid div h3 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 900;
+  }
+
+  #tokenomics .grid div div {
+    color: rgba(252, 252, 252, 0.5);
+    line-height: 100%;
+  }
+
+  #tokenomics .grid .tech {
+    background-color: var(--primary);
+  }
+
+  #tokenomics .grid .tech div {
+    color: #d4b5ff;
+  }
+
+  .gridItemImage {
+    filter: invert(4%) sepia(29%) saturate(1482%) hue-rotate(209deg)
+      brightness(125%) contrast(101%);
+  }
+
+  #charts {
+    position: relative;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    padding: 0 12px;
+  }
+
+  #charts .chart-background {
+    z-index: -1;
+    position: absolute;
+    background-color: var(--primary);
+    width: 300px;
+    height: 530px;
+    top: 0;
+    left: 48px;
+  }
+
+  #charts .arrow {
+    width: 59px;
+    height: 59px;
+    border-radius: 2px;
+    background: #161616;
+    border: 1px solid rgba(112, 112, 112, 0.87);
+    box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.63);
+
+    position: absolute;
+    top: 105%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #charts .arrow div {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  #charts .arrow:hover {
+    box-shadow: 0px 0px 15px rgb(100 100 100 / 70%);
+  }
+
+  #charts .arrow div:hover {
+    border-right-color: #b179ff !important;
+    border-left-color: #b179ff !important;
+  }
+
+  #uxxInfo {
+    padding: 50px 0;
+    position: relative;
+    margin: 0 auto;
+    padding-left: 32px;
+  }
+
+  #linksBottom {
+    margin: 20px 0 0 68px;
+  }
+
+  #linksBottom div {
+    margin-top: 20px;
+  }
+
+  #linksBottom img {
+    width: 20px;
+    margin-right: 20px;
+  }
+
+  #footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  #footer span {
+    margin-right: 28px;
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: left;
+    color: #fcfcfc;
+    text-decoration: none;
+  }
+
+  #footer .footer-links span {
+    cursor: pointer;
+  }
+
+  .home-desktop {
+    padding: 0 80px;
+  }
+
+  .home-mobile {
+    padding: 0 12px;
+  }
+
+  .home-default {
+    padding: 0 32px;
+  }
+
+  .top-section {
+    max-width: 685px;
+  }
+
+  .top-section-h1 {
+    margin-top: 2px;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .btn1 {
+    font-family: Montserrat, sans-serif;
+    border-style: none;
+    padding: 0;
+    width: 156px;
+    height: 39px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #d4b5ff;
+    font-weight: 600;
+    background: var(--primary);
+    cursor: pointer;
+  }
+
+  .btn2 {
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    border: 1px solid #7525e5;
+    padding: 0;
+    width: 156px;
+    height: 39px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #fcfcfc;
+    font-weight: 600;
+    margin-left: 20px;
+    background: transparent;
+  }
+
+  .top-section-p {
+    text-indent: 6px;
+    max-width: 610px;
+  }
+
+  .btn-outline {
+    margin-left: 20px;
+  }
+
+  .dials-image {
+    margin-top: 142px !important;
+    width: 276px;
+  }
+
+  .infinite-image {
+    height: 250px;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .economical-hybrid {
+  }
+
+  .tokenomics-desktop {
+    justify-content: center;
+  }
+
+  .top-section-header {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .cursor {
+    cursor: pointer;
+  }
+
+  .desktop-right {
+    padding-right: 2px;
+    position: relative;
+  }
+
+  .desktop-top-right {
+    position: absolute;
+    top: 68px;
+    right: 30px;
+  }
+
+  .desktop-grid-iamge {
+    height: 28.8px;
+    margin-bottom: 12px;
+  }
+
+  .gridItem-h4 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+
+  .gridItem-p {
+    line-height: 24px;
+    margin-top: 8px;
+    width: 224px;
+  }
+
+  .learn-about {
+    padding: 0 12px;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    text-transform: uppercase;
+  }
+
+  .learn {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 900;
+  }
+
+  .learn-div {
+    background: var(--primary);
+    height: 14.4px;
+    margin-bottom: 16px;
+    width: 17px;
+  }
+
+  .charts-image {
+    height: auto;
+    max-width: 100%;
+    margin-top: 18px;
+    width: 930px;
+  }
+
+  .top-left0 {
+    left: 12px;
+  }
+
+  .left17 {
+    left: 17px;
+  }
+
+  .border-right {
+    border-right: 10px solid #555;
+  }
+
+  .border-left {
+    border-left: 10px solid #555;
+  }
+
+  .top100 {
+    top: 100%;
+  }
+
+  .uxx-info {
+    margin-top: 100px;
+  }
+
+  .uxx-div {
+    background: var(--primary);
+    height: 14.4px;
+    margin-bottom: 12px;
+    width: 17px;
+  }
+
+  .uxx-h2 {
+    font-size: 28px;
+    line-height: 32px;
+    max-width: 500px;
+    font-weight: 900;
+  }
+
+  .uxx-h2-div {
+    /* max-width: min(550px, 50%); */
+    max-width: 500px;
+    margin-top: 40px;
+  }
+
+  .uxx-h2-div .uxx-text {
+    padding-right: 150px;
+  }
+
+  .uxx-h2-div .mprogress-bar {
+    margin-top: 40px;
+    background-color: #707070;
+    height: 4px;
+  }
+
+  .uxx-h2-div .mprogress-bar .progress-bar {
+    background-color: var(--primary);
+  }
+
+  .uxx-p-bold {
+    font-weight: bold;
+    line-height: 32px;
+  }
+
+  .uxx-p-top30 {
+    line-height: 32px;
+    margin-top: 30px;
+  }
+
+  .uxx-p-top34 {
+    line-height: 32px;
+    margin-top: 34px;
+  }
+
+  .uxx-info-image {
+    bottom: 76px;
+    max-width: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 115px;
+    right: 0px;
+  }
+
+  .stay-div {
+    background: radial-gradient(#393939 0%, #040404 100%);
+    /* background: radial-gradient(ellipse at right top, #f9f9f9 0%, #aaa 50%, black 100%); */
+    z-index: -1;
+  }
+
+  .stay-flex {
+    background: black;
+    display: flex;
+    position: relative;
+  }
+
+  .stay-flex .stay-bubble {
+    position: absolute;
+    width: 370px;
+  }
+
+  .stay-flex .stay-background {
+    width: 370px;
+  }
+
+  .stay-h3 {
+    font-size: 33px;
+    font-weight: 900;
+  }
+
+  .stay-margin-top {
+    height: 52px;
+    margin-top: 77px;
+    width: 226px;
+    background: var(--primary);
+    color: #d4b5ff;
+    font-weight: 600;
+    border-radius: 2px;
+    border-style: none;
+    cursor: pointer;
+  }
+
+  .stay-flex-max {
+    max-width: 50%;
+  }
+
+  .right-0 {
+    right: 12px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  #topSection {
+    padding: 55px 12px 0;
+  }
+
+  #topSection p {
+    font-size: 16px;
+  }
+
+  #topSection img {
+    margin-top: -50px;
+  }
+
+  #economicModel {
+    margin-top: 20px;
+    padding-top: 46px;
+    border-top: 1px solid gray;
+  }
+
+  #economicModel .economicModel-image-wide {
+    filter: drop-shadow(0px 3px 16px rgba(0, 0, 0, 0.49));
+    width: 100%;
+  }
+
+  #economicModel .economicModel-image {
+    margin-left: -12px;
+    width: 100vw;
+  }
+
+  #economicModel div {
+    padding: 20px 10px;
+    height: 451px;
+    border-radius: 1px;
+    background: var(--primary);
+    position: relative;
+    margin: 0 12px;
+  }
+
+  #economicModel h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 900;
+    font-family: "Montserrat";
+    width: 250px;
+  }
+
+  #economicModel p {
+    margin-top: 50px;
+    font-size: 16px;
+    margin-bottom: 22px;
+    color: #fcfcfc;
+    font-family: "Montserrat";
+    width: 300px;
+  }
+
+  #economicModel h4 {
+    font-size: 16px;
+    position: absolute;
+    bottom: 52px;
+    right: 40px;
+    font-weight: 700;
+  }
+
+  #economicModel h4 img {
+    width: 34px;
+    height: 34px;
+    vertical-align: text-top;
+    margin-left: 50px;
+    float: right;
+    margin-top: -10px;
+    cursor: pointer;
+  }
+
+  #tokenomics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 88px;
+  }
+
+  #tokenomics .grid {
+    display: grid;
+    grid-template-columns: 224.33px 224.33px 224.33px;
+    grid-template-rows: 137.67px 137.67px 137.67px;
+    font-size: 14px;
+    line-height: 56px;
+    text-align: left;
+  }
+
+  #tokenomics .grid div {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-family: Montserrat;
+  }
+
+  #tokenomics .grid div .learn-div {
+    position: absolute;
+    top: 20px;
+    left: 38px;
+  }
+
+  #tokenomics .grid div h3 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 900;
+  }
+
+  #tokenomics .grid div div {
+    color: rgba(252, 252, 252, 0.5);
+    line-height: 100%;
+  }
+
+  #tokenomics .grid .tech {
+    background-color: var(--primary);
+  }
+
+  #tokenomics .grid .tech div {
+    color: #d4b5ff;
+  }
+
+  .gridItemImage {
+    filter: invert(4%) sepia(29%) saturate(1482%) hue-rotate(209deg)
+      brightness(125%) contrast(101%);
+  }
+
+  #charts {
+    position: relative;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    padding: 0 12px;
+  }
+
+  #charts .chart-background {
+    z-index: -1;
+    position: absolute;
+    background-color: var(--primary);
+    width: 300px;
+    height: 530px;
+    top: 0;
+    left: 48px;
+  }
+
+  #charts .arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 2px;
+    background: #161616;
+    border: 1px solid rgba(112, 112, 112, 0.87);
+    box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.63);
+
+    position: absolute;
+    top: 105%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #charts .arrow div {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  #charts .arrow:hover {
+    box-shadow: 0px 0px 15px rgb(100 100 100 / 70%);
+  }
+
+  #charts .arrow div:hover {
+    border-right-color: #b179ff !important;
+    border-left-color: #b179ff !important;
+  }
+
+  #uxxInfo {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+  }
+
+  #linksBottom {
+    background: black;
+    padding: 70px 0;
+    margin: 30px 12px 0;
+  }
+
+  #linksBottom div {
+    margin-top: 20px;
+  }
+
+  #linksBottom img {
+    width: 20px;
+    margin-right: 20px;
+  }
+
+  #footer {
+    margin: 10px auto;
+    padding: 10px;
+  }
+
+  #footer span {
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: left;
+    color: #fcfcfc;
+    text-decoration: none;
+  }
+
+  #footer .footer-links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  #footer .footer-links span {
+    cursor: pointer;
+  }
+
+  #footer .footer-developer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .home-desktop {
+    padding: 0 80px;
+  }
+
+  .home-mobile {
+    padding: 0 12px;
+  }
+
+  .home-default {
+    padding: 0 32px;
+  }
+
+  .top-section {
+    max-width: 685px;
+  }
+
+  .top-section-h1 {
+    margin-top: 2px;
+    font-size: 30px;
+  }
+
+  .btn1 {
+    font-family: Montserrat, sans-serif;
+    border-style: none;
+    padding: 0;
+    width: 156px;
+    height: 39px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #d4b5ff;
+    font-weight: 600;
+    background: var(--primary);
+    cursor: pointer;
+  }
+
+  .btn2 {
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    border: 1px solid #7525e5;
+    padding: 0;
+    width: 156px;
+    height: 39px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #fcfcfc;
+    font-weight: 600;
+    margin-left: 20px;
+    background: transparent;
+  }
+
+  .top-section-p {
+    text-indent: 6px;
+    max-width: 610px;
+  }
+
+  .btn-outline {
+    margin-left: 20px;
+  }
+
+  .dials-image {
+    margin-top: 40px !important;
+    width: 276px;
+  }
+
+  .infinite-image {
+    height: 250px;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .economical-hybrid {
+  }
+
+  .tokenomics-desktop {
+    justify-content: center;
+  }
+
+  .top-section-header {
+    font-size: 30px;
+  }
+
+  .cursor {
+    cursor: pointer;
+  }
+
+  .desktop-right {
+    padding-right: 2px;
+    position: relative;
+  }
+
+  .desktop-top-right {
+    position: absolute;
+    top: 68px;
+    right: 30px;
+  }
+
+  .desktop-grid-iamge {
+    height: 28.8px;
+    margin-bottom: 12px;
+  }
+
+  .gridItem-h4 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+
+  .gridItem-p {
+    line-height: 24px;
+    margin-top: 8px;
+    width: 224px;
+  }
+
+  .learn-about {
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    text-transform: uppercase;
+  }
+
+  .learn {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 900;
+  }
+
+  .learn-div {
+    background: var(--primary);
+    height: 14.4px;
+    margin-bottom: 16px;
+    width: 17px;
+  }
+
+  .charts-image {
+    height: auto;
+    max-width: 100%;
+    margin-top: 18px;
+    width: 930px;
+  }
+
+  .top-left0 {
+    left: 12px;
+  }
+
+  .left17 {
+    left: 17px;
+  }
+
+  .border-right {
+    border-right: 10px solid #555;
+  }
+
+  .border-left {
+    border-left: 10px solid #555;
+  }
+
+  .top100 {
+    top: 100%;
+  }
+
+  .uxx-info {
+    margin-top: 120px;
+  }
+
+  .uxx-div {
+    background: var(--primary);
+    height: 14.4px;
+    margin-bottom: 12px;
+    width: 17px;
+  }
+
+  .uxx-h2 {
+    font-size: 24px;
+    max-width: 500px;
+    font-weight: 700;
+  }
+
+  .uxx-h2-div {
+    /* max-width: min(550px, 50%); */
+    margin-top: 40px;
+  }
+
+  .uxx-h2-div .uxx-text {
+  }
+
+  .uxx-h2-div .mprogress-bar {
+    margin-top: 40px;
+    background-color: #707070;
+    height: 4px;
+  }
+
+  .uxx-h2-div .mprogress-bar .progress-bar {
+    background-color: var(--primary);
+  }
+
+  .uxx-p-bold {
+    font-weight: bold;
+    line-height: 32px;
+  }
+
+  .uxx-p-top30 {
+    line-height: 32px;
+    margin-top: 30px;
+  }
+
+  .uxx-p-top34 {
+    line-height: 32px;
+    margin-top: 34px;
+  }
+
+  .uxx-info-image {
+    bottom: 76px;
+    max-width: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 115px;
+    right: 0px;
+  }
+
+  .stay-div {
+    /* background: radial-gradient(#393939 0%, #040404 100%); */
+    /* background: radial-gradient(ellipse at right top, #f9f9f9 0%, #aaa 50%, black 100%); */
+  }
+
+  .stay-flex {
+    position: relative;
+  }
+
+  .stay-flex .stay-bubble {
+    position: absolute;
+    width: 370px;
+  }
+
+  .stay-flex .stay-background {
+    width: 370px;
+  }
+
+  .stay-h3 {
+    font-size: 33px;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .stay-margin-top {
+    height: 52px;
+    margin-top: 77px;
+    width: 226px;
+    background: var(--primary);
+    color: #d4b5ff;
+    font-weight: 600;
+    border-radius: 2px;
+    border-style: none;
+    cursor: pointer;
+  }
+
+  .stay-flex-max {
+    max-width: 50%;
+  }
+
+  .right-0 {
+    right: 12px;
+  }
+
+  .img-wrapper {
+    position: relative;
+    margin: 0 12px;
+    align-items: center;
+    display: flex;
+  }
+
+  .img-wrapper .stay-background {
+    width: 100%;
+    height: 350px;
+  }
+
+  .img-wrapper .stay-bubble {
+    width: 50%;
+    margin-left: 25%;
+    position: absolute;
+    left: 0;
+  }
+
+  #tokennomics_phone {
+    margin: 30px 12px;
+  }
+
+  #tokennomics_phone .token-title {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+  }
+
+  #tokennomics_phone .token-title .su-span {
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 56px;
+    text-align: left;
+    color: #fcfcfc;
+  }
+
+  #tokennomics_phone .token-title .un-span {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 56px;
+    text-align: left;
+    color: #fcfcfc;
+    margin-right: 20px;
+  }
+
+  #tokennomics_phone .token-title button {
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    background: #3a383e;
+    color: white;
+    border: 0;
+  }
+
+  #tokennomics_phone .token-content {
+    background-color: #3a383e;
+    width: 100%;
+    height: 413px;
+    margin-top: 20px;
+    padding: 20px;
+    position: relative;
+  }
+
+  #tokennomics_phone .token-content .tokenc-content-text1 {
+    margin-top: 30px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    color: #fcfcfc;
+  }
+
+  #tokennomics_phone .token-content .tokenc-content-text2 {
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    color: #fcfcfc;
+  }
+
+  #tokennomics_phone .token-content p {
+    max-width: 300px;
+  }
+
+  #tokennomics_phone .token-content .img-circle{ 
+    position: absolute;
+    right: -115px;
+    bottom: -115px;
+  }
+}
