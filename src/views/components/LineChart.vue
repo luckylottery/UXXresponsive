@@ -4,7 +4,7 @@ import { Line, Bar } from "vue-chartjs";
 let linechart = [];
 let barchart = [];
 for (var i = 0; i < 31; i++) {
-  barchart[i] = 5;
+  barchart[i] = 4.8;
 }
 linechart[0] = 10;
 for (var j = 1; j < 21; j++) {
@@ -15,7 +15,7 @@ for (var k = 21; k < 31; k++) {
 }
 
 export default {
-  extends: Line,
+  extends: Bar,
   data() {
     return {
       chartData: {
@@ -134,7 +134,7 @@ export default {
           ],
           xAxes: [
             {
-              barThickness: 8,
+              barThickness: 8 ,
               gridLines: {
                 display: false,
               },
@@ -148,6 +148,7 @@ export default {
                   return value;
                 },
                 fontColor: "white",
+                rotation: 20
               },
             },
           ],
