@@ -177,6 +177,7 @@ export default {
     };
   },
   mounted() {
+    console.log('asdf')
     this.renderChart(this.chartData, this.options);
   },
 };
