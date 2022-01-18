@@ -15,6 +15,10 @@
   padding: 0 32px;
 }
 
+.iphone-footer {
+  display: none;
+}
+
 @media screen and (min-width: 1280px) {
   .wrapper {
     margin: 0 auto;
@@ -719,6 +723,7 @@
     justify-content: space-between;
     margin: 0 auto;
     padding: 10px;
+    margin-top: 30px;
   }
 
   #footer span {
@@ -937,6 +942,7 @@
     margin-top: 40px;
     background-color: #707070;
     height: 4px;
+    width: 125%;
   }
 
   .uxx-h2-div .mprogress-bar .progress-bar {
@@ -1199,6 +1205,7 @@
     padding: 20px;
     border-bottom: 1px solid gray;
     border-top: 1px solid gray;
+    padding-bottom: 50px;
   }
 
   #linksBottom {
@@ -1238,11 +1245,17 @@
     margin-bottom: 20px;
   }
 
+  .
+
   #footer .footer-links span {
     cursor: pointer;
   }
 
   #footer .footer-developer {
+    display: none;
+  }
+
+  #footer .iphone-footer {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -1273,7 +1286,7 @@
     font-family: Montserrat, sans-serif;
     border-style: none;
     padding: 0;
-    width: 116px;
+    width: 156px;
     height: 39px;
     border-radius: 2px;
     font-size: 16px;
@@ -1288,7 +1301,7 @@
     font-family: Montserrat, sans-serif;
     border: 1px solid #7525e5;
     padding: 0;
-    width: 116px;
+    width: 156px;
     height: 39px;
     border-radius: 2px;
     font-size: 16px;

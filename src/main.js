@@ -11,9 +11,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { ToggleButton } from 'vue-js-toggle-button'
 import VueCharts from 'vue-chartjs'
 import { Bar, Line, Timeseries } from 'vue-chartjs'
-// import { SliderPlugin } from "@syncfusion/ej2-vue-inputs";
-
-// Vue.use(SliderPlugin);
 
 Vue.use(VueCharts);
 Vue.use(Bar, Line);
@@ -21,7 +18,6 @@ Vue.use(Bar, Line);
 
 Vue.component('ToggleButton', ToggleButton)
 Vue.use(ToggleButton)
-// Vue.use(VueToggle)
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin

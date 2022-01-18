@@ -19,29 +19,7 @@ export default {
   data() {
     return {
       chartData: {
-        labels: [
-          "0",
-          "",
-          "1",
-          "",
-          "2",
-          "",
-          "3",
-          "",
-          "4",
-          "",
-          "5",
-          "",
-          "6",
-          "",
-          "7",
-          "",
-          "8",
-          "",
-          "9",
-          "",
-          "10",
-        ],
+        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
         datasets: [
           {
             type: "line",
@@ -152,7 +130,7 @@ export default {
     };
   },
   mounted() {
-    console.log('asdf')
+    console.log("asdf");
     this.renderChart(this.chartData, this.options);
   },
 };

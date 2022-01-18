@@ -1,12 +1,9 @@
-<style>
-@import url("../assets/css/Dapp.css");
-</style>
 <template>
-  <b-container class="mt-4 mb-4">
+  <b-container class="mt-4">
     <!-- up container -->
-    <div class="up-container">
-      <div class="left-container">
-        <div class="home-header px-3 box-background" v-show="width >= 768">
+    <b-row>
+      <b-col md="9"  class="left-container">
+        <div class="home-header px-3 box-background">
           <div>
             <span class="header-title">Circulating UXX</span
             ><span v-text="stats.circulating"></span>
@@ -32,15 +29,10 @@
         <div class="yield-box box-background">
           <div class="title">yield Curve</div>
           
-          <div  v-show="width >= 768" class="range-header justify-content-between px-4">
+          <div class="range-header d-flex justify-content-between px-4">
             <span>INFLATION</span>
             <div class="d-flex">
-              <!-- <span
-                style="border: 2px solid gray; border-radius: 16px; width: 50px; line-height: 1.9"
-                class="me-3"
-                >{{ inflationValue }}%</span> -->
               <span
-                style="border: 2px solid gray; border-radius: 16px; width: 50px; line-height: 1.9"
                 class="me-3"
                 >10%</span>
               <div class="range-slider bg-ruler">
@@ -60,13 +52,13 @@
                 ></b-form-input>
               </div>
             </div>
-            <span style="color: #6d1eda">STAKING</span>
+            <span class="staking">STAKING</span>
           </div>
 
-          <div class="px-3 pb-3 pt-3">
-            <LineChart v-if="width >= 768"></LineChart>
-            <MiniLineChart v-else></MiniLineChart>
-            <div class="zero-line"></div>
+          <div class="px-3 pb-3">
+            <line-chart style="min-width: 812px">
+            </line-chart>
+            <div class="bottom-line"></div>
             <div class="chart-legend">
               <span class="mx-3">Stake</span>
               <svg height="10" width="30">
@@ -79,9 +71,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </b-col>
 
-      <div class="p-0 right-container"> 
+      <b-col md="3" class="p-0">
         <div class="box box-background">
           <div class="title">liquidity</div>
           <div>
@@ -162,43 +154,21 @@
             </b-row>
           </div>
 
-          <div v-show="width < 768" style="display: flex; text-align: center; justify-content: center; margin-top: 30px; font-size: 11px">
-            <span
-              style="border: 2px solid gray; border-radius: 16px; width: 40px; line-height: 2"
-              class="me-1"
-              >{{inflationValue}}%</span>
-            <div class="range-slider bg-ruler" style="height: 26px; width: 200px">
-              <img class="ruler-image" src="@/assets/images/ruler.svg" width="170">
-              <span class="ruler-pointer-value" :style=leftValue>
-                2.7
-              </span>
-              <b-form-input
-                id="inflation-range myRange"
-                class="slider"
-                style="border-radius: 10px; position: relative; top: -9px; padding: 8px;"
-                v-model="inflationValue"
-                type="range"
-                min="0"
-                max="100"
-              ></b-form-input>
-            </div>
-          </div>
-
           <div class="btn-group">
             <button class="stake-btn">Stake</button>
-            <button class="stake-btn" style="background-color: rgba(109, 30, 218, 0.4)">Withdraw</button>
+            <button class="withdraw-btn">Withdraw</button>
           </div>
         </div>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
 
     <!-- down container -->
-    <div class="down-container">
-      <div class="left-container box-background">
+    <b-row>
+      <b-col md="9" class="left-container  box-background">
         <div class="stake-box">
           <div class="title">my Stakes</div>
           <div class="stake-content">
-            <table class="stake-table" v-show="width >= 504">
+            <table class="stake-table">
               <tbody>
                 <tr
                   style="
@@ -262,45 +232,11 @@
                 </tr>
               </tbody>
             </table>
-            <table class="stake-table" v-show="width < 504">
-              <tbody>
-                <tr>
-                  <th class="first-cell">Contracts</th>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                </tr>
-                <tr>
-                  <td class="first-cell">Maturity</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                </tr>
-                <tr>
-                  <td class="first-cell">Time(Years)</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                </tr>
-                <tr>
-                  <td class="first-cell">UXX</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                </tr>
-                <tr>
-                  <td class="first-cell">Yield</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                </tr>
-                <tr>
-                  <td class="first-cell">Exit Fee %</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
-      </div>
+      </b-col>
 
-      <div class="p-0 right-container box-background">
+      <b-col md="3" class="p-0  box-background">
         <div class="recent-box">
           <div class="recent-title-container">
             <span>recent Transactions</span>
@@ -362,34 +298,17 @@
             </table>
           </div>
         </div>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
 <script>
-// @ is an alias to /src
-const throttle = (func, limit = 1) => {
-  let inThrottle;
-  return function () {
-    const args = arguments;
-    const context = this;
-    if (!inThrottle) {
-      func.apply(context, args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
-    }
-  };
-};
-
-import Chart from "./Chart.vue";
-import LineChart from "./LineChart";
-import MiniLineChart from "./MiniLineChart";
+import LineChart from "./components/LineChart";
 
 export default {
   data() {
     return {
-      width: window.innerWidth,
       inflationValue: 0,
       orderType: "Single",
       stats: {
@@ -531,10 +450,7 @@ export default {
   },
   watch: {
     inflationValue: function(val1, val2) {
-      if (this.width >= 768)
-        this.leftValue = `left: ${val1 * 2.5}px`
-      else  
-        this.leftValue = `left: ${val1 * 1.7}px`
+      this.leftValue = `left: ${val1 * 2.5}px`
     }
   },
   methods: {
@@ -551,17 +467,10 @@ export default {
         return 'order-button'
       else
         return 'order-button clicked-order-button'
-    },
-    updateDimensions(e) {
-      this.width = window.innerWidth;
-    },
-  },
-  mounted() {
-    window.addEventListener("resize", throttle(this.updateDimensions), true);
+    }
   },
   components: {
     LineChart,
-    MiniLineChart
   },
 };
 </script>
