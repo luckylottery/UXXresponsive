@@ -164,6 +164,21 @@ header {
       margin-top: 2px;
     }
   }
+  
+  #header-dropdown {
+    background: none !important;    
+    width: 52px !important;
+
+    button {
+      background: transparent !important;  
+      border: 0px !important;
+      top: -24px;
+    }
+
+    .dropdown-toggle::after {
+      border: 0 !important;
+    }
+  }
 
 }
 

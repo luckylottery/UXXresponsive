@@ -34,8 +34,23 @@
             >
           </div>
           <div id="nav-button" v-show="width < 1280">
-            <div></div>
-            <div></div>
+            <div class="nav-button-icon"></div>
+            <div class="nav-button-icon"></div>
+            <b-dropdown id="header-dropdown" text="" right v-if="!$route.path.startsWith('/app')">
+              <b-dropdown-item>About</b-dropdown-item>
+              <b-dropdown-item>Summary</b-dropdown-item>
+              <b-dropdown-item>resource</b-dropdown-item>
+              <b-dropdown-item>contact</b-dropdown-item>
+              <b-dropdown-item>system</b-dropdown-item>
+              <b-dropdown-item>learn</b-dropdown-item>
+              <!-- <b-dropdown-divider></b-dropdown-divider> -->
+            </b-dropdown>
+            <b-dropdown id="header-dropdown" text="" right v-else>
+              <b-dropdown-item>HOME</b-dropdown-item>
+              <b-dropdown-item>STAKE</b-dropdown-item>
+              <b-dropdown-item>MINE</b-dropdown-item>
+              <!-- <b-dropdown-divider></b-dropdown-divider> -->
+            </b-dropdown>
           </div>
         </div>
       </header>

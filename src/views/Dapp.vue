@@ -6,7 +6,7 @@
     <!-- up container -->
     <div class="up-container">
       <div class="left-container">
-        <div class="home-header px-3 box-background" v-show="width >= 770">
+        <div class="home-header px-3 box-background" v-show="width >= 768">
           <div>
             <span class="header-title">Circulating UXX</span
             ><span v-text="stats.circulating"></span>
@@ -32,7 +32,7 @@
         <div class="yield-box box-background">
           <div class="title">yield Curve</div>
           
-          <div  v-show="width >= 770" class="range-header justify-content-between px-4">
+          <div  v-show="width >= 768" class="range-header justify-content-between px-4">
             <span>INFLATION</span>
             <div class="d-flex">
               <!-- <span
@@ -64,8 +64,8 @@
           </div>
 
           <div class="px-3 pb-3 pt-3">
-            <LineChart v-show="width >= 770"></LineChart>
-            <MiniLineChart v-show="width < 770"></MiniLineChart>
+            <LineChart v-if="width >= 768"></LineChart>
+            <MiniLineChart v-else></MiniLineChart>
             <div class="zero-line"></div>
             <div class="chart-legend">
               <span class="mx-3">Stake</span>
@@ -162,20 +162,20 @@
             </b-row>
           </div>
 
-          <div v-show="width < 770" style="display: flex; text-align: center; justify-content: center;">
+          <div v-show="width < 768" style="display: flex; text-align: center; justify-content: center; margin-top: 30px; font-size: 11px">
             <span
-              style="border: 2px solid gray; border-radius: 16px; width: 50px; line-height: 1.9"
-              class="me-3"
+              style="border: 2px solid gray; border-radius: 16px; width: 40px; line-height: 2"
+              class="me-1"
               >{{inflationValue}}%</span>
-            <div class="range-slider bg-ruler">
-              <img class="ruler-image" src="@/assets/images/ruler.svg" width="250">
+            <div class="range-slider bg-ruler" style="height: 26px; width: 200px">
+              <img class="ruler-image" src="@/assets/images/ruler.svg" width="170">
               <span class="ruler-pointer-value" :style=leftValue>
-                {{inflationValue}}
+                2.7
               </span>
               <b-form-input
                 id="inflation-range myRange"
                 class="slider"
-                style="border-radius: 10px; position: relative; top: -8px; padding: 5px;"
+                style="border-radius: 10px; position: relative; top: -9px; padding: 8px;"
                 v-model="inflationValue"
                 type="range"
                 min="0"
@@ -198,7 +198,7 @@
         <div class="stake-box">
           <div class="title">my Stakes</div>
           <div class="stake-content">
-            <table class="stake-table" v-show="width >= 418">
+            <table class="stake-table" v-show="width >= 504">
               <tbody>
                 <tr
                   style="
@@ -262,7 +262,7 @@
                 </tr>
               </tbody>
             </table>
-            <table class="stake-table" v-show="width < 418">
+            <table class="stake-table" v-show="width < 504">
               <tbody>
                 <tr>
                   <th class="first-cell">Contracts</th>
@@ -531,7 +531,10 @@ export default {
   },
   watch: {
     inflationValue: function(val1, val2) {
-      this.leftValue = `left: ${val1 * 2.5}px`
+      if (this.width >= 768)
+        this.leftValue = `left: ${val1 * 2.5}px`
+      else  
+        this.leftValue = `left: ${val1 * 1.7}px`
     }
   },
   methods: {

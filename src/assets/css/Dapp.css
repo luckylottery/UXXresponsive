@@ -68,7 +68,7 @@
   bottom: 17px;
 }
 
-@media screen and (max-width: 992px) and (min-width: 770px) {
+@media screen and (max-width: 992px) and (min-width: 768px) {
   .yield-box .zero-line {
     position: absolute;
     border-bottom: 3px solid gray;
@@ -109,7 +109,17 @@
   margin-top: 12px;
 }
 
-@media screen and (max-width: 770px) and (min-width: 540px){
+@media screen and (max-width: 767px) and (min-width: 575px) {
+  .up-container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .down-container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
   .box {
     border: 2px solid #404040;
     border-radius: 4px 4px;
@@ -120,8 +130,8 @@
     position: absolute;
     border-bottom: 3px solid gray;
     margin-left: 28px;
-    width: 437px;
-    bottom: 39px;
+    width: 401px;
+    bottom: 44px;
   }
 
   .order-box .btn-group {
@@ -135,49 +145,194 @@
   }
 
   .order-box {
-    height: 500px;
+    height: 535px;
   }
-  
+
   .yield-box .chart-legend {
     position: absolute;
     bottom: 0;
   }
 }
 
-@media screen and (max-width: 540px) and (min-width: 375px){
-    .box {
-      border: 2px solid #404040;
-      border-radius: 4px 4px;
-      margin-top: 12px;
-    }
-  
-    .yield-box .zero-line {
-      position: absolute;
-      border-bottom: 3px solid gray;
-      margin-left: 28px;
-      width: 272px;
-      bottom: 39px;
-    }
-  
-    .order-box .btn-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .stake-btn {
-      margin-bottom: 10px;
-    }
-  
-    .order-box {
-      height: 500px;
-    }
-    
-    .yield-box .chart-legend {
-      position: absolute;
-      bottom: 0;
-    }
+@media screen and (max-width: 575px) and (min-width: 504px) {
+  .up-container {
+    max-width: 480px;
+    margin: 0 auto;
   }
+
+  .down-container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .box {
+    border: 2px solid #404040;
+    border-radius: 4px 4px;
+    margin-top: 12px;
+  }
+
+  .yield-box .zero-line {
+    position: absolute;
+    border-bottom: 3px solid gray;
+    margin-left: 28px;
+    width: 401px;
+    bottom: 44px;
+  }
+
+  .order-box .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stake-btn {
+    margin-bottom: 10px;
+  }
+
+  .order-box {
+    height: 535px;
+  }
+
+  .yield-box .chart-legend {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 503px) and (min-width: 400px) {
+  .up-container {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .down-container {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .yield-box .zero-line {
+    position: absolute;
+    border-bottom: 3px solid gray;
+    margin-left: 28px;
+    width: 302px;
+    bottom: 38px;
+  }
+
+  .box {
+    border: 2px solid #404040;
+    border-radius: 4px 4px;
+    margin-top: 12px;
+  }
+
+  .order-box .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .yield-box .chart-legend {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .stake-btn {
+    margin-bottom: 10px;
+  }
+  
+  .order-box {
+    height: 535px;
+  }
+}
+
+@media screen and (max-width: 399px) and (min-width: 350px) {
+  .up-container {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .down-container {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .yield-box .zero-line {
+    position: absolute;
+    border-bottom: 3px solid gray;
+    margin-left: 28px;
+    width: 222px;
+    bottom: 38px;
+  }
+
+  .box {
+    border: 2px solid #404040;
+    border-radius: 4px 4px;
+    margin-top: 12px;
+  }
+
+  .order-box .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .yield-box .chart-legend {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .stake-btn {
+    margin-bottom: 10px;
+  }
+  
+  .order-box {
+    height: 535px;
+  }
+}
+
+@media screen and (max-width: 349px) and (min-width: 300px) {
+  .up-container {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .down-container {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .yield-box .zero-line {
+    position: absolute;
+    border-bottom: 3px solid gray;
+    margin-left: 28px;
+    width: 200px;
+    bottom: 39px;
+  }
+
+  .box {
+    border: 2px solid #404040;
+    border-radius: 4px 4px;
+    margin-top: 12px;
+  }
+
+  .order-box .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .yield-box .chart-legend {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .stake-btn {
+    margin-bottom: 10px;
+  }
+  
+  .order-box {
+    height: 535px;
+  }
+}
 
 .yield-image {
   margin-top: 18px;
