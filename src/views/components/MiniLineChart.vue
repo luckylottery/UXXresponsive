@@ -90,7 +90,7 @@ export default {
               gridLines: {
                 display: true,
                 color: "gray",
-                lineWidth: 3,
+                lineWidth: 1,
               },
             },
             {

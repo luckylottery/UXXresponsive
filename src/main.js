@@ -12,9 +12,16 @@ import { ToggleButton } from 'vue-js-toggle-button'
 import VueCharts from 'vue-chartjs'
 import { Bar, Line, Timeseries } from 'vue-chartjs'
 
+// fontawesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faInfoCircle)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.use(VueCharts);
 Vue.use(Bar, Line);
-
 
 Vue.component('ToggleButton', ToggleButton)
 Vue.use(ToggleButton)

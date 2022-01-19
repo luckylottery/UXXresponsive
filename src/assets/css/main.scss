@@ -37,6 +37,7 @@
 }
 :root {
   --primary: #6d1eda;
+  --dark-primary: rgba(109, 30, 218, 0.4);
 }
 
 .max-width {
@@ -44,8 +45,12 @@
   margin: 0 auto;
 }
 
-.border-bottom {
-  border-bottom: 1px solid #404040;
+.light-background {
+  background: var(--primary) !important;
+}
+
+.dark-background {
+  background: var(--dark-primary) !important;
 }
 
 @mixin fw-regular {
@@ -120,6 +125,7 @@ header {
       margin-left: 7px;
       display: table-caption;
       padding-top: 8px;
+      font-weight: bold;
     }
 
     a {
@@ -127,7 +133,7 @@ header {
       text-decoration: none;
       text-transform: uppercase;
       color: inherit;
-      opacity: 0.6;
+      // opacity: 0.6;
       font-size: 14px;
 
       &.router-link-exact-active {

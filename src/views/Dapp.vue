@@ -1,5 +1,6 @@
 <style>
 @import url("../assets/css/Dapp.css");
+
 </style>
 <template>
   <b-container class="mt-4 mb-3">
@@ -31,8 +32,11 @@
 
         <div class="yield-box box-background">
           <div class="title">yield Curve</div>
-          
-          <div  v-if="width >= 768" class="range-header justify-content-between px-4">
+
+          <div
+            v-if="width >= 768"
+            class="range-header justify-content-between px-4"
+          >
             <span>INFLATION</span>
             <div class="d-flex">
               <!-- <span
@@ -40,19 +44,34 @@
                 class="me-3"
                 >{{ inflationValue }}%</span> -->
               <span
-                style="border: 2px solid gray; border-radius: 16px; width: 50px; line-height: 1.9"
+                style="
+                  border: 2px solid gray;
+                  border-radius: 16px;
+                  width: 50px;
+                  line-height: 1.9;
+                "
                 class="me-3"
-                >10%</span>
+                >10%</span
+              >
               <div class="range-slider bg-ruler">
-                <img class="ruler-image" src="@/assets/images/ruler.svg" width="250">
+                <img
+                  class="ruler-image"
+                  src="@/assets/images/ruler.svg"
+                  width="250"
+                />
                 <!-- <img class="ruler-pointer-image" src="@/assets/images/ruler_pointer.svg"> -->
-                <span class="ruler-pointer-value" :style=leftValue>
-                  {{inflationValue}}
+                <span class="ruler-pointer-value" :style="leftValue">
+                  {{ inflationValue }}
                 </span>
                 <b-form-input
                   id="inflation-range myRange"
                   class="slider"
-                  style="border-radius: 10px; position: relative; top: -8px; padding: 5px;"
+                  style="
+                    border-radius: 10px;
+                    position: relative;
+                    top: -8px;
+                    padding: 5px;
+                  "
                   v-model="inflationValue"
                   type="range"
                   min="0"
@@ -63,26 +82,61 @@
             <span style="color: #6d1eda">STAKING</span>
           </div>
 
-          <div class="px-3 pb-3 pt-3">
+          <div
+            :class="{
+              'px-3': true,
+              'pt-3': true,
+              'pb-5': width < 768,
+              'pb-3': width >= 768,
+            }"
+          >
+            <div class="mini-chart-top" v-show="width < 768">
+              <span v-b-modal.help-modal
+                >X Plane Left
+                <div>i</div>
+                <img src="@/assets/images/circle.svg"
+              /></span>
+              <span class="ms-2" v-b-modal.help-modal
+                >X Plane Right 
+                <div>i</div>
+                <img src="@/assets/images/circle.svg"
+              /></span>
+            </div>
+            <div class="circle-i" v-show="width < 768" v-b-modal.help-modal>
+              <div>i</div>
+              <img src="@/assets/images/circle.svg" />
+            </div>
             <LineChart v-if="width >= 768"></LineChart>
-            <MiniLineChart v-else></MiniLineChart>
+            <MiniLineChart v-else class="mini-line-chart"></MiniLineChart>
             <div class="clear-y-axis"></div>
             <div class="zero-line"></div>
             <div class="chart-legend">
               <span class="mx-3">Stake</span>
               <svg height="10" width="30">
-                <line x1="0" y1="5" x2="30" y2="5" style="stroke:#8226FB;stroke-width:4" />
+                <line
+                  x1="0"
+                  y1="5"
+                  x2="30"
+                  y2="5"
+                  style="stroke: #8226fb; stroke-width: 4"
+                />
               </svg>
               <span class="mx-3">Yield</span>
               <svg height="10" width="30">
-                <line x1="0" y1="5" x2="30" y2="5" style="stroke:#fff;stroke-width:4" />
+                <line
+                  x1="0"
+                  y1="5"
+                  x2="30"
+                  y2="5"
+                  style="stroke: #fff; stroke-width: 4"
+                />
               </svg>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="p-0 right-container"> 
+      <div class="p-0 right-container">
         <div class="box box-background">
           <div class="title">liquidity</div>
           <div>
@@ -118,7 +172,7 @@
           <div class="order-header">
             <span class="title-single me-2">Single</span>
             <toggle-button
-              :value=orderToggle
+              :value="orderToggle"
               color="#D4B5FF"
               @click="orderToggle = !orderToggle"
             />
@@ -128,56 +182,117 @@
           <div class="order-container">
             <b-row class="py-2 order-row">
               <b-col class="order-name">Maturity</b-col>
-              <b-col :class="orderButtonClass(1)"  @click="clickOrderButton(1)"><span>*Month</span></b-col>
-              <b-col :class="orderButtonClass(2)"  @click="clickOrderButton(2)"><span>*Year</span></b-col>
+              <b-col :class="orderButtonClass(1)" @click="clickOrderButton(1)"
+                ><span>*Month</span></b-col
+              >
+              <b-col :class="orderButtonClass(2)" @click="clickOrderButton(2)"
+                ><span>*Year</span></b-col
+              >
             </b-row>
             <b-row class="py-2 order-row">
               <b-col class="order-name">Date</b-col>
-              <b-col :class="orderButtonClass(3)"  @click="clickOrderButton(3)"><span>19/12/2025</span></b-col>
-              <b-col :class="orderButtonClass(4)"  @click="clickOrderButton(4)"><span>4.23</span></b-col>
+              <b-col :class="orderButtonClass(3)" @click="clickOrderButton(3)"
+                ><span>19/12/2025</span></b-col
+              >
+              <b-col :class="orderButtonClass(4)" @click="clickOrderButton(4)"
+                ><span>4.23</span></b-col
+              >
             </b-row>
             <b-row class="py-2 order-row">
               <b-col class="order-name">Open Interest</b-col>
-              <b-col :class="orderButtonClass(5)"  @click="clickOrderButton(5)"><span>600,000</span></b-col>
-              <b-col :class="orderButtonClass(6)"  @click="clickOrderButton(6)"><span>1.5%</span></b-col>
+              <b-col :class="orderButtonClass(5)" @click="clickOrderButton(5)"
+                ><span>600,000</span></b-col
+              >
+              <b-col :class="orderButtonClass(6)" @click="clickOrderButton(6)"
+                ><span>1.5%</span></b-col
+              >
             </b-row>
             <b-row class="py-2 order-row">
               <b-col class="order-name">Daily Delta</b-col>
-              <b-col :class="orderButtonClass(7)"  @click="clickOrderButton(7)"><span>(5,000)</span></b-col>
-              <b-col :class="orderButtonClass(8)"  @click="clickOrderButton(8)"><span>0.135%</span></b-col>
+              <b-col :class="orderButtonClass(7)" @click="clickOrderButton(7)"
+                ><span>(5,000)</span></b-col
+              >
+              <b-col :class="orderButtonClass(8)" @click="clickOrderButton(8)"
+                ><span>0.135%</span></b-col
+              >
             </b-row>
             <b-row class="py-2 order-row">
               <b-col class="order-name">Yield / Exit Fee</b-col>
-              <b-col :class="orderButtonClass(9)"  @click="clickOrderButton(9)"><span>14.61%</span></b-col>
-              <b-col :class="orderButtonClass(10)"  @click="clickOrderButton(10)"><span>34.65%</span></b-col>
+              <b-col :class="orderButtonClass(9)" @click="clickOrderButton(9)"
+                ><span>14.61%</span></b-col
+              >
+              <b-col :class="orderButtonClass(10)" @click="clickOrderButton(10)"
+                ><span>34.65%</span></b-col
+              >
             </b-row>
             <b-row class="py-2 order-row">
               <b-col class="order-name">Position</b-col>
-              <b-col :class="orderButtonClass(11)"  @click="clickOrderButton(11)"><span>20,000</span></b-col>
-              <b-col :class="orderButtonClass(12)"  @click="clickOrderButton(12)"><span>0.0500%</span></b-col>
+              <b-col :class="orderButtonClass(11)" @click="clickOrderButton(11)"
+                ><span>20,000</span></b-col
+              >
+              <b-col :class="orderButtonClass(12)" @click="clickOrderButton(12)"
+                ><span>0.0500%</span></b-col
+              >
             </b-row>
             <b-row class="py-2 order-row">
               <b-col class="order-name">Quantity</b-col>
-              <b-col :class="orderButtonClass(13)"  @click="clickOrderButton(13)"><span>*Quantity</span></b-col>
-              <b-col :class="orderButtonClass(14)"  @click="clickOrderButton(14)"><span>0.0025%</span></b-col>
+              <b-col :class="orderButtonClass(13)" @click="clickOrderButton(13)"
+                ><span>*Quantity</span></b-col
+              >
+              <b-col :class="orderButtonClass(14)" @click="clickOrderButton(14)"
+                ><span>0.0025%</span></b-col
+              >
             </b-row>
           </div>
 
-          <div v-show="width < 768" style="border: 1px solid gray;margin: 30px 12px 0;padding: 8px 0;border-radius: 28px;">
-            <div style="display: flex; text-align: center; justify-content: center; font-size: 11px">
+          <div
+            v-show="width < 768"
+            style="
+              border: 1px solid gray;
+              margin: 30px 12px 0;
+              padding: 8px 0;
+              border-radius: 28px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                font-size: 11px;
+              "
+            >
               <span
-                style="border: 2px solid gray; border-radius: 16px; width: 40px; line-height: 2"
+                style="
+                  border: 2px solid gray;
+                  border-radius: 16px;
+                  width: 40px;
+                  line-height: 2;
+                "
                 class="me-1"
-                >{{inflationValue}}%</span>
-              <div class="range-slider bg-ruler" style="height: 26px; width: 200px">
-                <img class="ruler-image" src="@/assets/images/ruler.svg" width="170">
-                <span class="ruler-pointer-value" :style=leftValue>
-                  {{inflationValue}}
+                >{{ inflationValue }}%</span
+              >
+              <div
+                class="range-slider bg-ruler"
+                style="height: 26px; width: 200px"
+              >
+                <img
+                  class="ruler-image"
+                  src="@/assets/images/ruler.svg"
+                  width="170"
+                />
+                <span class="ruler-pointer-value" :style="leftValue">
+                  {{ inflationValue }}
                 </span>
                 <b-form-input
                   id="inflation-range myRange"
                   class="slider"
-                  style="border-radius: 10px; position: relative; top: -9px; padding: 8px;"
+                  style="
+                    border-radius: 10px;
+                    position: relative;
+                    top: -9px;
+                    padding: 8px;
+                  "
                   v-model="inflationValue"
                   type="range"
                   min="0"
@@ -189,7 +304,12 @@
 
           <div class="btn-group">
             <button class="stake-btn">Stake</button>
-            <button class="stake-btn" style="background-color: rgba(109, 30, 218, 0.4)">Withdraw</button>
+            <button
+              class="stake-btn"
+              style="background-color: rgba(109, 30, 218, 0.4)"
+            >
+              Withdraw
+            </button>
           </div>
         </div>
       </div>
@@ -303,11 +423,15 @@
         </div>
       </div>
 
+      <div class="stake-slide-right mb-4 mt-2" v-show="width < 504">
+        Slide Right <b-icon icon="caret-right-fill" style="color: white"></b-icon>
+      </div>
+
       <div class="p-0 right-container box-background">
         <div class="recent-box">
           <div class="recent-title-container">
             <span>recent Transactions</span>
-            <img src="@/assets/images/three_dot.svg" width="20px">
+            <img src="@/assets/images/three_dot.svg" width="20px" />
           </div>
           <div class="recent">
             <table class="recent-table">
@@ -367,6 +491,26 @@
         </div>
       </div>
     </div>
+
+    <!-- help modal -->
+    <b-modal id="help-modal" ref="help-modal">
+      <div class="help-modal-header">
+        <span> Help </span>
+        <span @click="hideModal"> X </span>
+      </div>
+      <div class="help-modal-body">
+        <p class="mb-4">
+          Press anywhere on the axis to access values on the different stake
+          periods
+        </p>
+        <div class="image-container">
+          <img src="@/assets/images/help-image.png"/>
+        </div>
+        <div class="btn-container mt-4">
+          <button>Next</button>
+        </div>
+      </div>
+    </b-modal>
   </b-container>
 </template>
 
@@ -388,6 +532,7 @@ const throttle = (func, limit = 1) => {
 import Chart from "./Chart.vue";
 import LineChart from "./components/LineChart";
 import MiniLineChart from "./components/MiniLineChart";
+import { BIcon } from 'bootstrap-vue'
 
 export default {
   data() {
@@ -526,40 +671,37 @@ export default {
       ],
       orderToggle: true,
       orderedNumber: [1],
-      leftValue: 'left: 0'
+      leftValue: "left: 0",
     };
   },
   computed: {
     graphData() {},
   },
   watch: {
-    inflationValue: function(val1, val2) {
-      if (this.width >= 768)
-        this.leftValue = `left: ${val1 * 2.5}px`
-      else  
-        this.leftValue = `left: ${val1 * 1.7}px`
-    }
+    inflationValue: function (val1, val2) {
+      if (this.width >= 768) this.leftValue = `left: ${val1 * 2.5}px`;
+      else this.leftValue = `left: ${val1 * 1.7}px`;
+    },
   },
   methods: {
-    clickOrderButton : function(num) {
-      const found = this.orderedNumber.findIndex(e => e === num)
-      if (found == -1)
-        this.orderedNumber.push(num)
-      else
-        this.orderedNumber.splice(found, 1)
+    clickOrderButton: function (num) {
+      const found = this.orderedNumber.findIndex((e) => e === num);
+      if (found == -1) this.orderedNumber.push(num);
+      else this.orderedNumber.splice(found, 1);
     },
     orderButtonClass: function (num) {
-      const found = this.orderedNumber.findIndex(e => e === num)
-      if (found == -1)
-        return 'order-button'
-      else
-        return 'order-button clicked-order-button'
+      const found = this.orderedNumber.findIndex((e) => e === num);
+      if (found == -1) return "order-button";
+      else return "order-button clicked-order-button";
     },
     updateDimensions(e) {
       this.width = window.innerWidth;
       // console.log(window, window.innerWidth, window.outerWidth)
-      if (this.width == 822 && window.outerWidth == 767)
-        this.width = 767
+      if (this.width == 822 && window.outerWidth == 767) this.width = 767;
+      if (this.width == 514 && window.outerWidth == 503) this.width = 503;
+    },
+    hideModal() {
+      this.$refs["help-modal"].hide();
     },
   },
   mounted() {
@@ -567,7 +709,8 @@ export default {
   },
   components: {
     LineChart,
-    MiniLineChart
+    MiniLineChart,
+    BIcon,
   },
 };
 </script>

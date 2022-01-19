@@ -245,10 +245,6 @@
           <span>Developed by</span>
           <img src="@/assets/images/develop-icon.svg"/>
         </div>
-        <div class="iphone-footer">
-          <img src="@/assets/images/develop-icon.svg"/>
-          <span>Developed by</span>
-        </div>
       </div>
     </div>
   </div>

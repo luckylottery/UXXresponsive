@@ -48,7 +48,7 @@
   .clear-y-axis {
     top: 130px;
     width: 12px;
-    height: 348px;
+    height: 373px;
     background-color: #191919;
     position: absolute;
     left: 85px;
@@ -85,7 +85,7 @@
   .clear-y-axis {
     top: 130px;
     width: 12px;
-    height: 348px;
+    height: 373px;
     background-color: #191919;
     position: absolute;
     left: 85px;
@@ -111,7 +111,7 @@
   .clear-y-axis {
     top: 130px;
     width: 12px;
-    height: 348px;
+    height: 373px;
     background-color: #191919;
     position: absolute;
     left: 85px;
@@ -180,10 +180,10 @@
 
   .yield-box .zero-line {
     position: absolute;
-    border-bottom: 3px solid gray;
-    margin-left: 28px;
+    border-bottom: 1px solid gray;
+    margin-left: 19px;
     width: 401px;
-    bottom: 39px;
+    bottom: 71px;
   }
 
   .order-box .btn-group {
@@ -202,7 +202,7 @@
 
   .yield-box .chart-legend {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
   }
 
   .stake-btn {
@@ -210,12 +210,12 @@
   }
   
   .clear-y-axis {
-    top: 44px;
-    width: 12px;
-    height: 373px;
+    top: 100px;
+    width: 25px;
+    height: 314px;
     background-color: #191919;
     position: absolute;
-    left: 35px;
+    left: 11px;
     z-index: 2;
   }
 }
@@ -239,10 +239,10 @@
 
   .yield-box .zero-line {
     position: absolute;
-    border-bottom: 3px solid gray;
-    margin-left: 28px;
+    border-bottom: 1px solid gray;
+    margin-left: 19px;
     width: 401px;
-    bottom: 39px;
+    bottom: 71px;
   }
 
   .order-box .btn-group {
@@ -261,7 +261,7 @@
 
   .yield-box .chart-legend {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
   }
 
   .stake-btn {
@@ -269,12 +269,12 @@
   }
   
   .clear-y-axis {
-    top: 44px;
-    width: 12px;
-    height: 373px;
+    top: 100px;
+    width: 25px;
+    height: 314px;
     background-color: #191919;
     position: absolute;
-    left: 35px;
+    left: 11px;
     z-index: 2;
   }
 }
@@ -292,10 +292,10 @@
 
   .yield-box .zero-line {
     position: absolute;
-    border-bottom: 3px solid gray;
-    margin-left: 28px;
+    border-bottom: 1px solid gray;
+    margin-left: 19px;
     width: 300px;
-    bottom: 39px;
+    bottom: 71px;
   }
 
   .box {
@@ -312,7 +312,7 @@
 
   .yield-box .chart-legend {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
   }
 
   .stake-btn {
@@ -325,12 +325,12 @@
   }
 
   .clear-y-axis {
-    top: 44px;
-    width: 12px;
-    height: 373px;
+    top: 100px;
+    width: 25px;
+    height: 314px;
     background-color: #191919;
     position: absolute;
-    left: 35px;
+    left: 11px;
     z-index: 2;
   }
 }
@@ -348,10 +348,10 @@
 
   .yield-box .zero-line {
     position: absolute;
-    border-bottom: 3px solid gray;
-    margin-left: 28px;
+    border-bottom: 1px solid gray;
+    margin-left: 19px;
     width: 220px;
-    bottom: 39px;
+    bottom: 71px;
   }
 
   .box {
@@ -368,7 +368,7 @@
 
   .yield-box .chart-legend {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
   }
 
   .stake-btn {
@@ -381,14 +381,58 @@
   }
 
   .clear-y-axis {
-    top: 44px;
-    width: 12px;
-    height: 373px;
+    top: 100px;
+    width: 25px;
+    height: 314px;
     background-color: #191919;
     position: absolute;
-    left: 35px;
+    left: 11px;
     z-index: 2;
   }
+}
+
+.mini-chart-top {
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.mini-chart-top span {
+  font-size: 13px;
+  border: 1px solid gray;
+  padding: 5px 5px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.mini-chart-top span div{
+  display: inline;
+  position: relative;
+  right: -8px;
+  z-index: 10;
+}
+
+.mini-chart-top span img{
+  position: relative;
+  left: -3px;
+  top: -1px;
+}
+
+.circle-i {
+  z-index: 11;
+  position: absolute;
+  right: 37px;
+  top: 205px;
+}
+
+.circle-i div {
+  position: absolute;
+  left: 7px;
+  top: 2px;
+  z-index: 11;
+}
+
+.circle-i image {
+  position: absolute;
 }
 
 @media screen and (max-width: 349px) and (min-width: 300px) {
@@ -404,10 +448,10 @@
 
   .yield-box .zero-line {
     position: absolute;
-    border-bottom: 3px solid gray;
-    margin-left: 28px;
+    border-bottom: 1px solid gray;
+    margin-left: 19px;
     width: 200px;
-    bottom: 43px;
+    bottom: 72px;
   }
 
   .box {
@@ -424,7 +468,7 @@
 
   .yield-box .chart-legend {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
   }
 
   .stake-btn {
@@ -436,13 +480,29 @@
   }
 
   .clear-y-axis {
-    top: 44px;
-    width: 12px;
-    height: 371px;
+    top: 150px;
+    width: 25px;
+    height: 314px;
     background-color: #191919;
     position: absolute;
-    left: 35px;
+    left: 11px;
     z-index: 2;
+  }
+
+  .mini-chart-top span {
+    font-size: 13px;
+    border: 1px solid gray;
+    padding: 5px 5px;
+    border-radius: 2px;
+    font-weight: bold;
+    display: block;
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+    width: 134px;
+  }
+
+  .circle-i {
+    top: 250px;
   }
 }
 
@@ -718,3 +778,84 @@
   line-height: 0.5;
   font-family: Montserrat;
 }
+
+.mini-line-chart {
+ position: relative; 
+ left: -10px;
+ height: 325px;
+}
+
+#help-modal {
+  margin-top: 70px;
+}
+
+#help-modal .modal-header {
+  display: none;
+}
+
+#help-modal .modal-body {
+  background: #161616;
+  border: 1px solid #303030;
+  border-radius: 2px;
+  padding: 0 !important;
+}
+
+#help-modal .help-modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  color: white;
+  border-bottom: 1px solid #303030;
+  background: rgba(109, 30, 218, 0.4);
+  font-family: Montserrat;
+  font-size: 12px;
+}
+
+#help-modal .help-modal-body {
+  padding: 20px 30px;
+}
+
+#help-modal .help-modal-body p {
+  font-family: Montserrat;
+  font-size: 12px;
+  color: white;
+  line-height: 1.7;
+}
+
+#help-modal .help-modal-body .btn-container {
+  text-align: center;
+}
+
+#help-modal .help-modal-body .btn-container button {
+  background: #6d1eda;
+  border: 1px solid #6d1eda;
+  border-radius: 3px;
+  color: #fcfcfc;
+  font-family: Montserrat;
+  font-size: 16px;
+  width: 60%;
+  padding: 7px 0;
+}
+
+#help-modal .help-modal-body .image-container {
+  display: flex;
+  justify-content: center;
+}
+
+#help-modal .modal-footer {
+  display: none;
+}
+
+.stake-slide-right {
+  text-align: right;
+  font-size: 12px;
+  font-family: Montserrat;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+
+
+
