@@ -20,7 +20,7 @@
             <router-link to="/learn">learn</router-link>
           </div>
           
-          <div class="links home" v-show="width > 1280" v-else>
+          <div class="links home" v-show="width > 1024" v-else>
             <router-link to="/app">Home</router-link>
             <router-link to="/app/stake">stake</router-link>
             <router-link to="/app/mine">mine</router-link>

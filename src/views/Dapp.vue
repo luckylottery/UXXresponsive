@@ -158,8 +158,8 @@
                   <td><button class="btn">Claim</button></td>
                 </tr>
                 <tr>
-                  <td class="lab3">Unstaked</td>
-                  <td class="lab4">133,000</td>
+                  <td class="lab1">Unstaked</td>
+                  <td class="lab2">133,000</td>
                   <td></td>
                 </tr>
               </tbody>

@@ -13,7 +13,7 @@
   padding-right: 12px;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1280px) {
   .up-container {
     display: flex;
   }
@@ -67,19 +67,18 @@
   }
 }
 
-@media screen and (max-width: 1400px) and (min-width: 1200px) {
+@media screen and (max-width: 1280px) and (min-width: 1200px) {
   .yield-box .zero-line {
     position: absolute;
     border-bottom: 3px solid gray;
     margin-left: 78px;
-    width: 923px;
+    width: 633px;
     bottom: 67px;
   }
 
   .box {
     border: 2px solid #404040;
     border-radius: 4px 4px;
-    margin-top: 12px;
   }
 
   .clear-y-axis {
@@ -768,14 +767,6 @@
 
 .uxxTable tr .lab2 {
   color: #fcfcfc;
-  padding-left: 12px;
-}
-
-.uxxTable tr .lab3 {
-  width: 85px !important;
-  text-align: left;
-  color: #d4b5ff;
-  border-left: 0;
   padding-left: 12px;
 }
 
