@@ -57,7 +57,6 @@
               <b-dropdown-item>contact</b-dropdown-item>
               <b-dropdown-item>system</b-dropdown-item>
               <b-dropdown-item>learn</b-dropdown-item>
-              <!-- <b-dropdown-divider></b-dropdown-divider> -->
             </b-dropdown>
 
             <!-- dapp page -->

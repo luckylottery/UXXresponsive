@@ -1,7 +1,7 @@
 <style>
 @import url("../assets/css/Dapp.css");
-
 </style>
+
 <template>
   <b-container class="mt-4 mb-3">
     <!-- up container -->
@@ -84,25 +84,25 @@
 
           <div
             :class="{
-              'px-3': true,
+              'px-3': width >= 350,
               'pt-3': true,
               'pb-5': width < 768,
               'pb-3': width >= 768,
             }"
           >
             <div class="mini-chart-top" v-show="width < 768">
-              <span v-b-modal.help-modal
+              <span @click="showHelpModal = !showHelpModal"
                 >X Plane Left
                 <div>i</div>
                 <img src="@/assets/images/circle.svg"
               /></span>
-              <span class="ms-2" v-b-modal.help-modal
-                >X Plane Right 
+              <span class="ms-2" @click="showHelpModal = !showHelpModal"
+                >X Plane Right
                 <div>i</div>
                 <img src="@/assets/images/circle.svg"
               /></span>
             </div>
-            <div class="circle-i" v-show="width < 768" v-b-modal.help-modal>
+            <div class="circle-i" v-show="width < 768" @click="showHelpModal = !showHelpModal">
               <div>i</div>
               <img src="@/assets/images/circle.svg" />
             </div>
@@ -424,7 +424,8 @@
       </div>
 
       <div class="stake-slide-right mb-4 mt-2" v-show="width < 504">
-        Slide Right <b-icon icon="caret-right-fill" style="color: white"></b-icon>
+        Slide Right
+        <b-icon icon="caret-right-fill" style="color: white"></b-icon>
       </div>
 
       <div class="p-0 right-container box-background">
@@ -492,25 +493,7 @@
       </div>
     </div>
 
-    <!-- help modal -->
-    <b-modal id="help-modal" ref="help-modal">
-      <div class="help-modal-header">
-        <span> Help </span>
-        <span @click="hideModal"> X </span>
-      </div>
-      <div class="help-modal-body">
-        <p class="mb-4">
-          Press anywhere on the axis to access values on the different stake
-          periods
-        </p>
-        <div class="image-container">
-          <img src="@/assets/images/help-image.png"/>
-        </div>
-        <div class="btn-container mt-4">
-          <button>Next</button>
-        </div>
-      </div>
-    </b-modal>
+    <HelpModal :show="showHelpModal" />
   </b-container>
 </template>
 
@@ -532,7 +515,8 @@ const throttle = (func, limit = 1) => {
 import Chart from "./Chart.vue";
 import LineChart from "./components/LineChart";
 import MiniLineChart from "./components/MiniLineChart";
-import { BIcon } from 'bootstrap-vue'
+import HelpModal from "./components/Help";
+import { BIcon } from "bootstrap-vue";
 
 export default {
   data() {
@@ -672,6 +656,7 @@ export default {
       orderToggle: true,
       orderedNumber: [1],
       leftValue: "left: 0",
+      showHelpModal: false
     };
   },
   computed: {
@@ -695,13 +680,8 @@ export default {
       else return "order-button clicked-order-button";
     },
     updateDimensions(e) {
-      this.width = window.innerWidth;
+      this.width = window.outerWidth;
       // console.log(window, window.innerWidth, window.outerWidth)
-      if (this.width == 822 && window.outerWidth == 767) this.width = 767;
-      if (this.width == 514 && window.outerWidth == 503) this.width = 503;
-    },
-    hideModal() {
-      this.$refs["help-modal"].hide();
     },
   },
   mounted() {
@@ -711,6 +691,7 @@ export default {
     LineChart,
     MiniLineChart,
     BIcon,
+    HelpModal
   },
 };
 </script>

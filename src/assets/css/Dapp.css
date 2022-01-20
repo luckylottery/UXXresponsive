@@ -450,7 +450,7 @@
     position: absolute;
     border-bottom: 1px solid gray;
     margin-left: 19px;
-    width: 200px;
+    width: 240px;
     bottom: 72px;
   }
 
@@ -473,6 +473,7 @@
 
   .stake-btn {
     margin-bottom: 10px;
+    width: 100%;
   }
 
   .order-box {
@@ -480,13 +481,17 @@
   }
 
   .clear-y-axis {
-    top: 150px;
+    top: 117px;
     width: 25px;
     height: 314px;
     background-color: #191919;
     position: absolute;
-    left: 11px;
+    left: 1px;
     z-index: 2;
+  }
+
+  .mini-chart-top {
+    display: flex;
   }
 
   .mini-chart-top span {
@@ -496,13 +501,18 @@
     border-radius: 2px;
     font-weight: bold;
     display: block;
-    margin-left: 0 !important;
+    margin-left: 5px !important;
     margin-top: 10px !important;
-    width: 134px;
+    width: 131px;
   }
 
   .circle-i {
-    top: 250px;
+    top: 225px;
+    right: 10px;
+  }
+
+  .mini-line-chart {
+    left: -5px !important;
   }
 }
 

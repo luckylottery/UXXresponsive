@@ -15,6 +15,11 @@
   padding: 0 32px;
 }
 
+/*merge*/
+.iphone-footer {
+  display: none;
+}
+
 @media screen and (min-width: 1280px) {
   .wrapper {
     margin: 0 auto;
@@ -719,6 +724,7 @@
     justify-content: space-between;
     margin: 0 auto;
     padding: 10px;
+    margin-top: 30px; /*merge*/
   }
 
   #footer span {
@@ -937,6 +943,7 @@
     margin-top: 40px;
     background-color: #707070;
     height: 4px;
+    width: 125%; /*merge*/
   }
 
   .uxx-h2-div .mprogress-bar .progress-bar {
@@ -1021,6 +1028,7 @@
 
   #topSection p {
     font-size: 16px;
+    line-height: 1.5;
   }
 
   #topSection img {
@@ -1066,7 +1074,7 @@
     margin-bottom: 22px;
     color: #fcfcfc;
     font-family: "Montserrat";
-    width: 300px;
+    width: 260px;
   }
 
   #economicModel h4 {
@@ -1449,17 +1457,15 @@
 
   .uxx-p-bold {
     font-weight: bold;
-    line-height: 32px;
+    line-height: 1.5;
   }
 
   .uxx-p-top30 {
-    line-height: 32px;
-    margin-top: 30px;
+    line-height: 1.5;
   }
 
   .uxx-p-top34 {
-    line-height: 32px;
-    margin-top: 34px;
+    line-height: 1.5;
   }
 
   .uxx-info-image {
