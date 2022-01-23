@@ -155,50 +155,54 @@
               '@2x.png 2x'
             "
           />
-          <img v-else
+          <img
+            v-else
             class="charts-image small-charts-image"
-            :src="'/charts/' + smallCharts[cIndex] + '.svg'"
+            :src="'/charts/' + smallCharts[cIndex] + '.png'"
           />
-          <div class="info" @click="showHelpModal = !showHelpModal">
-        </div>
-        <div
-          v-show="width >= 1280"
-          class="arrow left-arrow"
-          @click="charts[cIndex - 1] ? cIndex-- : (cIndex = charts.length - 1)"
-        >
-          <div class="border-right" />
-        </div>
-        <div
-          v-show="width >= 1280"
-          class="arrow right-arrow"
-          @click="charts[cIndex + 1] ? cIndex++ : (cIndex = 0)"
-        >
-          <div class="border-left" />
-        </div>
 
+          <div class="info" @click="showHelpModal = !showHelpModal"></div>
+          <div
+            v-show="width >= 1280"
+            class="arrow left-arrow"
+            @click="
+              charts[cIndex - 1] ? cIndex-- : (cIndex = charts.length - 1)
+            "
+          >
+            <div class="border-right" />
+          </div>
+          <div
+            v-show="width >= 1280"
+            class="arrow right-arrow"
+            @click="charts[cIndex + 1] ? cIndex++ : (cIndex = 0)"
+          >
+            <div class="border-left" />
+          </div>
         </div>
         <div v-show="width < 1280" class="under-chart-container">
           <div
             class="arrow small-arrow"
-            @click="charts[cIndex - 1] ? cIndex-- : (cIndex = charts.length - 1)"
+            @click="
+              charts[cIndex - 1] ? cIndex-- : (cIndex = charts.length - 1)
+            "
           >
             <div class="border-right" />
           </div>
           <div class="dot-container">
             <div v-if="cIndex == 0">
-              <img src="@/assets/images/active-dot.svg"/>
-              <img src="@/assets/images/deactive-dot.svg"/>
-              <img src="@/assets/images/deactive-dot.svg"/>
+              <img src="@/assets/images/active-dot.svg" />
+              <img src="@/assets/images/deactive-dot.svg" />
+              <img src="@/assets/images/deactive-dot.svg" />
             </div>
             <div v-else-if="cIndex == 1">
-              <img src="@/assets/images/deactive-dot.svg"/>
-              <img src="@/assets/images/active-dot.svg"/>
-              <img src="@/assets/images/deactive-dot.svg"/>
+              <img src="@/assets/images/deactive-dot.svg" />
+              <img src="@/assets/images/active-dot.svg" />
+              <img src="@/assets/images/deactive-dot.svg" />
             </div>
             <div v-else>
-              <img src="@/assets/images/deactive-dot.svg"/>
-              <img src="@/assets/images/deactive-dot.svg"/>
-              <img src="@/assets/images/active-dot.svg"/>
+              <img src="@/assets/images/deactive-dot.svg" />
+              <img src="@/assets/images/deactive-dot.svg" />
+              <img src="@/assets/images/active-dot.svg" />
             </div>
           </div>
           <div
@@ -334,8 +338,8 @@
         <p class="gridItem-p w-100">{{ gridItem.text }}</p>
       </div>
     </b-modal>
-     
-     <HelpModal :show="showHelpModal" />
+
+    <HelpModal :show="showHelpModal" />
   </div>
 </template>
 
@@ -399,7 +403,7 @@ export default {
       charts: ["shortbias", "longbias", "evenhigh"],
       smallCharts: ["smallchart", "smallchart", "smallchart"],
       cIndex: 0,
-      showHelpModal: true
+      showHelpModal: true,
     };
   },
   computed: {
@@ -421,7 +425,7 @@ export default {
     clickSummaryGrid(item) {
       this.gridLabel = item.label;
       this.width < 1280 && this.$refs["summary-modal"].show();
-    }
+    },
   },
   mounted() {
     window.addEventListener("resize", throttle(this.updateDimensions), true);
@@ -429,7 +433,7 @@ export default {
   components: {
     Carousel,
     Slide,
-    HelpModal
+    HelpModal,
   },
 };
 </script>
