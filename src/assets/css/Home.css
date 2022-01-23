@@ -1676,10 +1676,8 @@
 }
 
 .info {
-  width: 50px;
-  height: 30px;
-  background-color: transparent;
   position: absolute;
-  top: 42%;
-  left: 28px;
+  top: 35%;
+  left: 3px;
+  cursor: pointer;
 }

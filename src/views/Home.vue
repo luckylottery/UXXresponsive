@@ -142,7 +142,7 @@
 
       <div id="charts">
         <div v-show="width > 1280" class="chart-background"></div>
-        <div style="position: relative">
+        <div :class="{ 'position-relative': width < 760 }">
           <img
             v-if="width >= 760"
             class="charts-image"
@@ -160,8 +160,9 @@
             class="charts-image small-charts-image"
             :src="'/charts/' + smallCharts[cIndex] + '.png'"
           />
-
-          <div class="info" @click="showHelpModal = !showHelpModal"></div>
+          <div class="info" v-show="width < 760" @click="showHelpModal = !showHelpModal">
+            <img src="@/assets/images/info.svg" />
+          </div>
           <div
             v-show="width >= 1280"
             class="arrow left-arrow"
@@ -401,7 +402,7 @@ export default {
       ],
       gridLabel: "unpegged stablecoin",
       charts: ["shortbias", "longbias", "evenhigh"],
-      smallCharts: ["smallchart", "smallchart", "smallchart"],
+      smallCharts: ["shortbias-small", "smallchart", "evenhigh-small"],
       cIndex: 0,
       showHelpModal: true,
     };
