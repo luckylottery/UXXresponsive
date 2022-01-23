@@ -13,7 +13,7 @@
   padding-right: 12px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1400px) {
   .up-container {
     display: flex;
   }
@@ -61,24 +61,25 @@
     border-radius: 4px 4px;
     margin-top: 12px;
   }
-  
+
   .order-box .btn-group {
     margin-top: 40px;
   }
 }
 
-@media screen and (max-width: 1280px) and (min-width: 1200px) {
+@media screen and (max-width: 1400px) and (min-width: 1200px) {
   .yield-box .zero-line {
     position: absolute;
     border-bottom: 3px solid gray;
     margin-left: 78px;
-    width: 633px;
+    width: 923px;
     bottom: 67px;
   }
 
   .box {
     border: 2px solid #404040;
     border-radius: 4px 4px;
+    margin-top: 12px;
   }
 
   .clear-y-axis {
@@ -149,7 +150,6 @@
   }
 }
 
-
 .stake-btn {
   width: 45%;
   background: #6d1eda;
@@ -207,7 +207,7 @@
   .stake-btn {
     width: 100%;
   }
-  
+
   .clear-y-axis {
     top: 100px;
     width: 25px;
@@ -266,7 +266,7 @@
   .stake-btn {
     width: 100%;
   }
-  
+
   .clear-y-axis {
     top: 100px;
     width: 25px;
@@ -396,6 +396,7 @@
 }
 
 .mini-chart-top span {
+  cursor: pointer;
   font-size: 13px;
   border: 1px solid gray;
   padding: 5px 5px;
@@ -403,20 +404,21 @@
   font-weight: bold;
 }
 
-.mini-chart-top span div{
+.mini-chart-top span div {
   display: inline;
   position: relative;
   right: -8px;
   z-index: 10;
 }
 
-.mini-chart-top span img{
+.mini-chart-top span img {
   position: relative;
   left: -3px;
   top: -1px;
 }
 
 .circle-i {
+  cursor: pointer;
   z-index: 11;
   position: absolute;
   right: 37px;
@@ -503,6 +505,7 @@
     margin-left: 5px !important;
     margin-top: 10px !important;
     width: 131px;
+    cursor: pointer;
   }
 
   .circle-i {
@@ -598,6 +601,11 @@
   font-size: 10px;
 }
 
+.recent-table .first-tr {
+  border-bottom: 2px solid #404040; 
+  height: 30px;
+}
+
 .stake-table {
   width: 100%;
   height: 100%;
@@ -624,6 +632,12 @@
   font-family: Montserrat;
   color: #b1b1b1;
   font-size: 12px;
+}
+
+.stake-table .first-tr {
+  border-bottom: 2px solid #404040;
+  margin-bottom: 5px;
+  height: 25px;
 }
 
 .stake-table .first-cell {
@@ -657,8 +671,45 @@
   font-size: 12px;
 }
 
+.ruler-container-small {
+  border: 1px solid gray;
+  margin: 30px 12px 0;
+  padding: 8px 0;
+  border-radius: 28px;
+  display: flex;
+  font-size: 11px;
+  justify-content: center;
+  text-align: center;
+}
+
+.input-slider {
+  border-radius: 10px;
+  position: relative;
+  top: -8px;
+  padding: 5px;
+}
+
+.inflation-span {
+  border: 2px solid gray;
+  border-radius: 16px;
+  width: 50px;
+  line-height: 1.9;
+}
+
+.inflation-span-small {
+  border: 2px solid gray;
+  border-radius: 16px;
+  width: 40px;
+  line-height: 2;
+}
+
 .range-slider {
   position: relative;
+}
+
+.range-slider-small {
+  height: 26px; 
+  width: 200px;
 }
 
 .range-slider .ruler-image {
@@ -770,6 +821,14 @@
   padding-left: 12px;
 }
 
+.uxxTable tr .lab3 {
+  width: 85px !important;
+  text-align: left;
+  color: #d4b5ff;
+  border-left: 0;
+  padding-left: 12px;
+}
+
 .uxxTable tr .btn {
   background: rgba(109, 30, 218, 0.4);
   color: #fcfcfc;
@@ -781,9 +840,9 @@
 }
 
 .mini-line-chart {
- position: relative; 
- left: -10px;
- height: 325px;
+  position: relative;
+  left: -10px;
+  height: 325px;
 }
 
 #help-modal {
@@ -810,6 +869,10 @@
   background: rgba(109, 30, 218, 0.4);
   font-family: Montserrat;
   font-size: 12px;
+}
+
+#help-modal .help-modal-header .close {
+  cursor: pointer;
 }
 
 #help-modal .help-modal-body {
@@ -852,11 +915,24 @@
   font-size: 12px;
   font-family: Montserrat;
   font-weight: bold;
+  color: white;
   cursor: pointer;
 }
 
+.staking-span {
+  color: var(--primary);
+}
 
+.stake-chart-legend-line {
+  stroke: #8226fb;
+  stroke-width: 4;
+}
 
+.yield-chart-legend-line {
+  stroke: #fff;
+  stroke-width: 4;
+}
 
-
-
+.withdraw-btn {
+  background-color: rgba(109, 30, 218, 0.4);
+}

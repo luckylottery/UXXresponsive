@@ -39,20 +39,7 @@
           >
             <span>INFLATION</span>
             <div class="d-flex">
-              <!-- <span
-                style="border: 2px solid gray; border-radius: 16px; width: 50px; line-height: 1.9"
-                class="me-3"
-                >{{ inflationValue }}%</span> -->
-              <span
-                style="
-                  border: 2px solid gray;
-                  border-radius: 16px;
-                  width: 50px;
-                  line-height: 1.9;
-                "
-                class="me-3"
-                >10%</span
-              >
+              <span class="me-3 inflation-span">{{ inflationValue }}</span>
               <div class="range-slider bg-ruler">
                 <img
                   class="ruler-image"
@@ -65,13 +52,7 @@
                 </span>
                 <b-form-input
                   id="inflation-range myRange"
-                  class="slider"
-                  style="
-                    border-radius: 10px;
-                    position: relative;
-                    top: -8px;
-                    padding: 5px;
-                  "
+                  class="slider input-slider"
                   v-model="inflationValue"
                   type="range"
                   min="0"
@@ -79,7 +60,7 @@
                 ></b-form-input>
               </div>
             </div>
-            <span style="color: #6d1eda">STAKING</span>
+            <span class="staking-span">STAKING</span>
           </div>
 
           <div
@@ -102,7 +83,11 @@
                 <img src="@/assets/images/circle.svg"
               /></span>
             </div>
-            <div class="circle-i" v-show="width < 768" @click="showHelpModal = !showHelpModal">
+            <div
+              class="circle-i"
+              v-show="width < 768"
+              @click="showHelpModal = !showHelpModal"
+            >
               <div>i</div>
               <img src="@/assets/images/circle.svg" />
             </div>
@@ -118,7 +103,7 @@
                   y1="5"
                   x2="30"
                   y2="5"
-                  style="stroke: #8226fb; stroke-width: 4"
+                  class="stake-chart-legend-line"
                 />
               </svg>
               <span class="mx-3">Yield</span>
@@ -128,7 +113,7 @@
                   y1="5"
                   x2="30"
                   y2="5"
-                  style="stroke: #fff; stroke-width: 4"
+                  class="yield-chart-legend-line"
                 />
               </svg>
             </div>
@@ -158,8 +143,8 @@
                   <td><button class="btn">Claim</button></td>
                 </tr>
                 <tr>
-                  <td class="lab1">Unstaked</td>
-                  <td class="lab2">133,000</td>
+                  <td class="lab3">Unstaked</td>
+                  <td class="lab4">133,000</td>
                   <td></td>
                 </tr>
               </tbody>
@@ -245,68 +230,32 @@
             </b-row>
           </div>
 
-          <div
-            v-show="width < 768"
-            style="
-              border: 1px solid gray;
-              margin: 30px 12px 0;
-              padding: 8px 0;
-              border-radius: 28px;
-            "
-          >
-            <div
-              style="
-                display: flex;
-                text-align: center;
-                justify-content: center;
-                font-size: 11px;
-              "
-            >
-              <span
-                style="
-                  border: 2px solid gray;
-                  border-radius: 16px;
-                  width: 40px;
-                  line-height: 2;
-                "
-                class="me-1"
-                >{{ inflationValue }}%</span
-              >
-              <div
-                class="range-slider bg-ruler"
-                style="height: 26px; width: 200px"
-              >
-                <img
-                  class="ruler-image"
-                  src="@/assets/images/ruler.svg"
-                  width="170"
-                />
-                <span class="ruler-pointer-value" :style="leftValue">
-                  {{ inflationValue }}
-                </span>
-                <b-form-input
-                  id="inflation-range myRange"
-                  class="slider"
-                  style="
-                    border-radius: 10px;
-                    position: relative;
-                    top: -9px;
-                    padding: 8px;
-                  "
-                  v-model="inflationValue"
-                  type="range"
-                  min="0"
-                  max="100"
-                ></b-form-input>
-              </div>
+          <div v-show="width < 768" class="ruler-container-small">
+            <span class="me-1 inflation-span-small">{{ inflationValue }}%</span>
+            <div class="range-slider bg-ruler range-slider-small">
+              <img
+                class="ruler-image"
+                src="@/assets/images/ruler.svg"
+                width="170"
+              />
+              <span class="ruler-pointer-value" :style="leftValue">
+                {{ inflationValue }}
+              </span>
+              <b-form-input
+                id="inflation-range myRange"
+                class="slider input-slider"
+                v-model="inflationValue"
+                type="range"
+                min="0"
+                max="100"
+              ></b-form-input>
             </div>
           </div>
 
           <div class="btn-group">
             <button class="stake-btn">Stake</button>
             <button
-              class="stake-btn"
-              style="background-color: rgba(109, 30, 218, 0.4)"
+              class="stake-btn withdraw-btn"
             >
               Withdraw
             </button>
@@ -323,13 +272,7 @@
           <div class="stake-content">
             <table class="stake-table" v-show="width >= 504">
               <tbody>
-                <tr
-                  style="
-                    border-bottom: 2px solid #404040;
-                    margin-bottom: 5px;
-                    height: 25px;
-                  "
-                >
+                <tr class="first-tr">
                   <th class="first-cell">Contracts</th>
                   <th>Maturity</th>
                   <th>Time(Years)</th>
@@ -425,7 +368,7 @@
 
       <div class="stake-slide-right mb-4 mt-2" v-show="width < 504">
         Slide Right
-        <b-icon icon="caret-right-fill" style="color: white"></b-icon>
+        <b-icon icon="caret-right-fill"></b-icon>
       </div>
 
       <div class="p-0 right-container box-background">
@@ -437,7 +380,7 @@
           <div class="recent">
             <table class="recent-table">
               <tbody>
-                <tr style="border-bottom: 2px solid #404040; height: 30px">
+                <tr class="first-tr">
                   <th>Time</th>
                   <th>Account</th>
                   <th>Action</th>
@@ -656,7 +599,7 @@ export default {
       orderToggle: true,
       orderedNumber: [1],
       leftValue: "left: 0",
-      showHelpModal: false
+      showHelpModal: false,
     };
   },
   computed: {
@@ -664,8 +607,8 @@ export default {
   },
   watch: {
     inflationValue: function (val1, val2) {
-      if (this.width >= 768) this.leftValue = `left: ${val1 * 2.5}px`;
-      else this.leftValue = `left: ${val1 * 1.7}px`;
+      if (this.width >= 768) this.leftValue = `left: ${val1 * 2.5 - 3}px`;
+      else this.leftValue = `left: ${val1 * 1.7 - 3}px`;
     },
   },
   methods: {
@@ -691,7 +634,7 @@ export default {
     LineChart,
     MiniLineChart,
     BIcon,
-    HelpModal
+    HelpModal,
   },
 };
 </script>

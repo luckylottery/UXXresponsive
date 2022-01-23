@@ -20,6 +20,11 @@
   display: none;
 }
 
+.small-stay-div {
+  width: 226px; 
+  margin: 0 auto;
+}
+
 @media screen and (min-width: 1280px) {
   .wrapper {
     margin: 0 auto;
@@ -1541,13 +1546,30 @@
   }
 
   #tokennomics_phone {
-    margin: 30px 12px;
+    margin: 30px 0;
+  }
+
+  #tokennomics_phone .d-mx {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #tokennomics_phone .d-border-bottom {
+    border-bottom: 1px solid gray;
   }
 
   #tokennomics_phone .token-title {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid gray;
+  }
+
+  #tokennomics_phone .token-title div {
+    display: flex;
+    align-items: center;
+  }
+
+  #tokennomics_phone .token-title img {
+    cursor: pointer;
   }
 
   #tokennomics_phone .token-title .su-span {
@@ -1560,6 +1582,7 @@
   }
 
   #tokennomics_phone .token-title .un-span {
+    text-transform: uppercase;
     font-family: Montserrat;
     font-weight: bold;
     font-size: 16px;
@@ -1580,7 +1603,6 @@
 
   #tokennomics_phone .token-content {
     background-color: #3a383e;
-    width: 100%;
     height: 413px;
     margin-top: 20px;
     padding: 20px;
@@ -1588,7 +1610,7 @@
   }
 
   #tokennomics_phone .token-content .tokenc-content-text1 {
-    margin-top: 30px;
+    margin-top: 20px;
     font-family: Montserrat;
     font-weight: 600;
     font-size: 16px;

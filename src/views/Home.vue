@@ -57,21 +57,20 @@
             UXX is an innovative algorithmic and uncollateralised token with no
             defined exogenous peg, no stabilisation requirements, and no fees
           </p>
-          <h4>
-            THE PRECISION...<img
-              src="@/assets/images/arrowBox.png"
-            />
-          </h4>
+          <h4>THE PRECISION...<img src="@/assets/images/arrowBox.png" /></h4>
         </div>
         <img
           v-show="width < 1280 && width >= 760"
           src="@/assets/images/uxxcoin.png"
           class="economicModel-image-wide"
         />
-        
       </div>
 
-      <div v-show="width >= 760" id="tokenomics" :class="!desktop ? 'tokenomics-desktop' : ''">
+      <div
+        v-show="width >= 760"
+        id="tokenomics"
+        :class="!desktop ? 'tokenomics-desktop' : ''"
+      >
         <div class="grid">
           <div>
             <div class="learn-div"></div>
@@ -105,25 +104,31 @@
         </div>
       </div>
 
-      <div v-show="width < 760" id="tokennomics_phone" :class="!desktop ? 'tokenomics-desktop' : ''">
-        <div class="learn-div">
-        </div>
-        <div class="token-title">
+      <div
+        v-show="width < 760"
+        id="tokennomics_phone"
+        :class="!desktop ? 'tokenomics-desktop' : ''"
+      >
+        <div class="learn-div d-mx"></div>
+        <div class="token-title d-mx">
           <span class="su-span">SUMMARY</span>
           <div>
-            <span class="un-span">UNSTAKING</span>
-            <button>></button>
+            <span class="un-span">{{ gridLabel }}</span>
+            <img src="@/assets/images/grayArrowBox.png" @click="changeSummary"/>
           </div>
         </div>
-        <div class="token-content">
-          <img src="/summary/unpeggedstablecoin.svg" class="">
+
+        <div class="d-border-bottom"></div>
+
+        <div class="token-content d-mx">
+          <img :src="gridLink(gridItem)" class="" />
           <p class="tokenc-content-text1">
-            UNPEGGED STABLECOIN
+            {{ gridItem.label }}
           </p>
           <p class="tokenc-content-text2">
-            The UXX model allows the classic stablecoin peg to be resolved internally by the network through the balance of system liquidity and transactional velocity
+            {{ gridItem.text }}
           </p>
-          <img src="@/assets/images/circle4.png" class="img-circle">
+          <img src="@/assets/images/circle4.png" class="img-circle" />
         </div>
       </div>
 
@@ -172,15 +177,15 @@
           <div class="uxx-h2-div">
             <div class="uxx-text">
               <p class="uxx-p-bold">
-                The monetary policy and token emission of UXX is determined by the
-                liquidity requirements of its individual users.
+                The monetary policy and token emission of UXX is determined by
+                the liquidity requirements of its individual users.
               </p>
               <p class="uxx-p-top34">
                 UXX is a constructed as a stablecoin with infinite issuance yet
-                with no defined fixed price peg. Rather than reference an external
-                currency or asset, the model allows the peg to be resolved from
-                the UXX market itself through the dynamic liquidity and associated
-                transactional velocity
+                with no defined fixed price peg. Rather than reference an
+                external currency or asset, the model allows the peg to be
+                resolved from the UXX market itself through the dynamic
+                liquidity and associated transactional velocity
               </p>
               <p class="uxx-p-top30">
                 Since UXX naturally reflects the network economy it becomes a
@@ -196,7 +201,10 @@
             v-show="width > 760"
             class="uxx-info-image"
             src="@/assets/images/stat3.png"
-            srcset="@/assets/images/stat3.png 1x, @/assets/images/stat3@2x.png 2x"
+            srcset="
+              @/assets/images/stat3.png    1x,
+              @/assets/images/stat3@2x.png 2x
+            "
             alt=""
           />
         </div>
@@ -207,23 +215,43 @@
       <div class="stay-div">
         <div class="stay-flex">
           <!-- <img src="@/assets/images/bottom.gif" class="stay-flex-max" loading="lazy"> -->
-          <img v-show="width >= 760" class="stay-background" src="@/assets/images/stay.svg" />
-          <img v-show="width >= 760" class="stay-bubble" src="@/assets/images/stay-bubble.svg" />
+          <img
+            v-show="width >= 760"
+            class="stay-background"
+            src="@/assets/images/stay.svg"
+          />
+          <img
+            v-show="width >= 760"
+            class="stay-bubble"
+            src="@/assets/images/stay-bubble.svg"
+          />
 
           <div id="linksBottom">
             <h3 class="stay-h3">STAY IN TOUCH</h3>
             <div v-show="width >= 760">
               <div><img src="@/assets/images/stay-white-stick.svg" /></div>
-              <div><img src="@/assets/images/envelope.svg" />info@uxx.network></div>
-              <div><img src="@/assets/images/telegram.png" />yxz.hwow.www.jolt.coo</div>
-              <div><img src="@/assets/images/discord.png" />uxx.discussion.prompt</div>
+              <div>
+                <img src="@/assets/images/envelope.svg" />info@uxx.network>
+              </div>
+              <div>
+                <img src="@/assets/images/telegram.png" />yxz.hwow.www.jolt.coo
+              </div>
+              <div>
+                <img src="@/assets/images/discord.png" />uxx.discussion.prompt
+              </div>
               <button class="stay-margin-top">Send Email</button>
             </div>
-            <div v-show="width < 760" style="width: 226px; margin: 0 auto">
+            <div v-show="width < 760" class="small-stay-div">
               <div><img src="@/assets/images/stay-white-stick.svg" /></div>
-              <div><img src="@/assets/images/envelope.svg" />info@uxx.network></div>
-              <div><img src="@/assets/images/telegram.png" />yxz.hwow.www.jolt.coo</div>
-              <div><img src="@/assets/images/discord.png" />uxx.discussion.prompt</div>
+              <div>
+                <img src="@/assets/images/envelope.svg" />info@uxx.network>
+              </div>
+              <div>
+                <img src="@/assets/images/telegram.png" />yxz.hwow.www.jolt.coo
+              </div>
+              <div>
+                <img src="@/assets/images/discord.png" />uxx.discussion.prompt
+              </div>
               <button class="stay-margin-top">Send Email</button>
             </div>
           </div>
@@ -243,10 +271,10 @@
         </div>
         <div class="footer-developer">
           <span>Developed by</span>
-          <img src="@/assets/images/develop-icon.svg"/>
+          <img src="@/assets/images/develop-icon.svg" />
         </div>
         <div class="iphone-footer">
-          <img src="@/assets/images/develop-icon.svg"/>
+          <img src="@/assets/images/develop-icon.svg" />
           <span>Developed by</span>
         </div>
       </div>
@@ -324,6 +352,10 @@ export default {
     updateDimensions(e) {
       this.width = window.innerWidth;
     },
+    changeSummary() {
+      const index = this.grid.findIndex(e => e.label == this.gridLabel)
+      this.gridLabel = this.grid[(index + 1) % 8].label
+    }
   },
   mounted() {
     window.addEventListener("resize", throttle(this.updateDimensions), true);

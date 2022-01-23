@@ -150,6 +150,7 @@ export default {
                 fontColor: "white",
                 rotation: 20
               },
+
             },
           ],
         },
@@ -171,6 +172,9 @@ export default {
               return "\nMaturrity  JAN-2026 \n\n      Yield  JAN-2026\n";
             },
           },
+        },
+        onHover: (event, chartElement) => {
+          event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
         },
         responsive: true,
         maintainAspectRatio: false,

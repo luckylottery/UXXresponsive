@@ -14,10 +14,12 @@ import { Bar, Line, Timeseries } from 'vue-chartjs'
 
 // fontawesome
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faWindowClose, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+// import { faXmark } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faInfoCircle)
+library.add(faUserSecret)
+library.add(faWindowClose)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(VueCharts);

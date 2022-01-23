@@ -3,7 +3,9 @@
   <b-modal id="help-modal" ref="help-modal">
     <div class="help-modal-header">
       <span> Help </span>
-      <span @click="hideModal"> X </span>
+      <span class="close" @click="hideModal">
+        <font-awesome-icon icon="window-close" />
+      </span>
     </div>
     <div class="help-modal-body">
       <p class="mb-4">

@@ -150,6 +150,9 @@ export default {
             },
           },
         },
+        onHover: (event, chartElement) => {
+          event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
+        },
         responsive: true,
         maintainAspectRatio: false,
       },
