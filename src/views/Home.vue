@@ -80,8 +80,7 @@
           <div
             v-for="item in grid"
             :key="item.label"
-            @mouseover="gridLabel = item.label"
-            @click="gridLabel = item.label"
+            @click="clickSummaryGrid(item)"
             :class="item.label == gridLabel ? `tech cursor` : 'cursor'"
           >
             <img
@@ -114,7 +113,10 @@
           <span class="su-span">SUMMARY</span>
           <div>
             <span class="un-span">{{ gridLabel }}</span>
-            <img src="@/assets/images/grayArrowBox.png" @click="changeSummary"/>
+            <img
+              src="@/assets/images/grayArrowBox.png"
+              @click="changeSummary"
+            />
           </div>
         </div>
 
@@ -140,8 +142,9 @@
 
       <div id="charts">
         <div v-show="width > 1280" class="chart-background"></div>
-        <div>
+        <div style="position: relative">
           <img
+            v-if="width >= 760"
             class="charts-image"
             :src="'/charts/' + charts[cIndex] + '.png'"
             :srcset="
@@ -152,19 +155,58 @@
               '@2x.png 2x'
             "
           />
+          <img v-else
+            class="charts-image small-charts-image"
+            :src="'/charts/' + smallCharts[cIndex] + '.svg'"
+          />
+          <div class="info" @click="showHelpModal = !showHelpModal">
         </div>
         <div
-          :class="width < 1000 ? 'top-left0 arrow' : 'left17 arrow'"
+          v-show="width >= 1280"
+          class="arrow left-arrow"
           @click="charts[cIndex - 1] ? cIndex-- : (cIndex = charts.length - 1)"
-          class="arrow"
         >
           <div class="border-right" />
         </div>
         <div
-          :class="width < 1000 ? 'top100 arrow right-0' : 'arrow right-0'"
+          v-show="width >= 1280"
+          class="arrow right-arrow"
           @click="charts[cIndex + 1] ? cIndex++ : (cIndex = 0)"
         >
           <div class="border-left" />
+        </div>
+
+        </div>
+        <div v-show="width < 1280" class="under-chart-container">
+          <div
+            class="arrow small-arrow"
+            @click="charts[cIndex - 1] ? cIndex-- : (cIndex = charts.length - 1)"
+          >
+            <div class="border-right" />
+          </div>
+          <div class="dot-container">
+            <div v-if="cIndex == 0">
+              <img src="@/assets/images/active-dot.svg"/>
+              <img src="@/assets/images/deactive-dot.svg"/>
+              <img src="@/assets/images/deactive-dot.svg"/>
+            </div>
+            <div v-else-if="cIndex == 1">
+              <img src="@/assets/images/deactive-dot.svg"/>
+              <img src="@/assets/images/active-dot.svg"/>
+              <img src="@/assets/images/deactive-dot.svg"/>
+            </div>
+            <div v-else>
+              <img src="@/assets/images/deactive-dot.svg"/>
+              <img src="@/assets/images/deactive-dot.svg"/>
+              <img src="@/assets/images/active-dot.svg"/>
+            </div>
+          </div>
+          <div
+            class="arrow small-arrow"
+            @click="charts[cIndex + 1] ? cIndex++ : (cIndex = 0)"
+          >
+            <div class="border-left" />
+          </div>
         </div>
       </div>
     </div>
@@ -270,8 +312,9 @@
           <span href="#">UXX C All Rights Reserved</span>
         </div>
         <div class="footer-developer">
-          <span>Developed by</span>
+          <span v-show="width >= 760">Developed by</span>
           <img src="@/assets/images/develop-icon.svg" />
+          <span v-show="width < 760">Developed by</span>
         </div>
         <div class="iphone-footer">
           <img src="@/assets/images/develop-icon.svg" />
@@ -279,10 +322,27 @@
         </div>
       </div>
     </div>
+
+    <b-modal id="summary-modal" ref="summary-modal">
+      <div class="summary-modal-header"></div>
+      <div class="summary-modal-body">
+        <img
+          class="gridItemImage desktop-grid-image"
+          :src="gridLink(gridItem)"
+        />
+        <h4 class="gridItem-h4">{{ gridItem.label }}</h4>
+        <p class="gridItem-p w-100">{{ gridItem.text }}</p>
+      </div>
+    </b-modal>
+     
+     <HelpModal :show="showHelpModal" />
   </div>
 </template>
 
 <script>
+import { Carousel, Slide } from "vue-carousel";
+import HelpModal from "./components/Help";
+
 // @ is an alias to /src
 const throttle = (func, limit = 1) => {
   let inThrottle;
@@ -336,8 +396,10 @@ export default {
         },
       ],
       gridLabel: "unpegged stablecoin",
-      charts: ["evenmedium", "shortbias", "longbias", "evenhigh"],
+      charts: ["shortbias", "longbias", "evenhigh"],
+      smallCharts: ["smallchart", "smallchart", "smallchart"],
       cIndex: 0,
+      showHelpModal: true
     };
   },
   computed: {
@@ -353,13 +415,21 @@ export default {
       this.width = window.innerWidth;
     },
     changeSummary() {
-      const index = this.grid.findIndex(e => e.label == this.gridLabel)
-      this.gridLabel = this.grid[(index + 1) % 8].label
+      const index = this.grid.findIndex((e) => e.label == this.gridLabel);
+      this.gridLabel = this.grid[(index + 1) % 8].label;
+    },
+    clickSummaryGrid(item) {
+      this.gridLabel = item.label;
+      this.width < 1280 && this.$refs["summary-modal"].show();
     }
   },
   mounted() {
     window.addEventListener("resize", throttle(this.updateDimensions), true);
   },
-  components: {},
+  components: {
+    Carousel,
+    Slide,
+    HelpModal
+  },
 };
 </script>

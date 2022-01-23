@@ -281,50 +281,14 @@
                   <th>Exit Fee %</th>
                   <th>Exit Fee UXX</th>
                 </tr>
-                <tr>
-                  <td class="first-cell">MARCH25</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                  <td>100,000</td>
-                  <td>12.90%</td>
-                  <td>-30.51%</td>
-                  <td>(30,510)</td>
-                </tr>
-                <tr>
-                  <td class="first-cell">MARCH25</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                  <td>100,000</td>
-                  <td>12.90%</td>
-                  <td>-30.51%</td>
-                  <td>(30,510)</td>
-                </tr>
-                <tr>
-                  <td class="first-cell">MARCH25</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                  <td>100,000</td>
-                  <td>12.90%</td>
-                  <td>-30.51%</td>
-                  <td>(30,510)</td>
-                </tr>
-                <tr>
-                  <td class="first-cell">MARCH25</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                  <td>100,000</td>
-                  <td>12.90%</td>
-                  <td>-30.51%</td>
-                  <td>(30,510)</td>
-                </tr>
-                <tr>
-                  <td class="first-cell">MARCH25</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
-                  <td>100,000</td>
-                  <td>12.90%</td>
-                  <td>-30.51%</td>
-                  <td>(30,510)</td>
+                <tr v-for="(e, i) in stakeData" :key="i">
+                  <td class="first-cell">{{e.contracts}}</td>
+                  <td>{{e.maturity}}</td>
+                  <td>{{e.time}}</td>
+                  <td>{{e.uxx}}</td>
+                  <td>{{e.yield}}</td>
+                  <td>{{e.feePro}}</td>
+                  <td>{{e.feeUxx}}</td>
                 </tr>
               </tbody>
             </table>
@@ -332,33 +296,38 @@
               <tbody>
                 <tr>
                   <th class="first-cell">Contracts</th>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
+                  <td>{{stakeData[selectedStake-2].contracts}}</td>
+                  <td>{{stakeData[selectedStake-1].contracts}}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">Maturity</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
+                  <td>{{stakeData[selectedStake-2].maturity}}</td>
+                  <td>{{stakeData[selectedStake-1].maturity}}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">Time(Years)</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
+                  <td>{{stakeData[selectedStake-2].time}}</td>
+                  <td>{{stakeData[selectedStake-1].time}}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">UXX</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
+                  <td>{{stakeData[selectedStake-2].uxx}}</td>
+                  <td>{{stakeData[selectedStake-1].uxx}}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">Yield</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
+                  <td>{{stakeData[selectedStake-2].yield}}</td>
+                  <td>{{stakeData[selectedStake-1].yield}}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">Exit Fee %</td>
-                  <td>30-Mar-25</td>
-                  <td>3.50</td>
+                  <td>{{stakeData[selectedStake-2].feePro}}</td>
+                  <td>{{stakeData[selectedStake-1].feePro}}</td>
+                </tr>
+                <tr>
+                  <td class="first-cell">Exit Fee UXX</td>
+                  <td>{{stakeData[selectedStake-2].feeUxx}}</td>
+                  <td>{{stakeData[selectedStake-1].feeUxx}}</td>
                 </tr>
               </tbody>
             </table>
@@ -366,7 +335,7 @@
         </div>
       </div>
 
-      <div class="stake-slide-right mb-4 mt-2" v-show="width < 504">
+      <div class="stake-slide-right mb-4 mt-2" v-show="width < 504" @click="stakeSlideRight">
         Slide Right
         <b-icon icon="caret-right-fill"></b-icon>
       </div>
@@ -596,10 +565,67 @@ export default {
           ryt: 32.83,
         },
       ],
+      stakeData: [
+        {
+          contracts: 'MARCH21',
+          maturity: '30-MAR-21',
+          time: '3.1',
+          uxx: '100,001',
+          yield: '12.91%',
+          feePro: '-30.51%',
+          feeUxx: '(30,51)'
+        },
+        {
+          contracts: 'MARCH22',
+          maturity: '30-MAR-22',
+          time: '3.2',
+          uxx: '100,002',
+          yield: '12.92%',
+          feePro: '-30.52%',
+          feeUxx: '(30,52)'
+        },
+        {
+          contracts: 'MARCH23',
+          maturity: '30-MAR-23',
+          time: '3.3',
+          uxx: '100,003',
+          yield: '12.93%',
+          feePro: '-30.53%',
+          feeUxx: '(30,53)'
+        },
+        {
+          contracts: 'MARCH24',
+          maturity: '30-MAR-24',
+          time: '3.4',
+          uxx: '100,004',
+          yield: '12.94%',
+          feePro: '-30.54%',
+          feeUxx: '(30,54)'
+        },
+        {
+          contracts: 'MARCH25',
+          maturity: '30-MAR-25',
+          time: '3.5',
+          uxx: '100,005',
+          yield: '12.95%',
+          feePro: '-30.55%',
+          feeUxx: '(30,55)'
+        },
+        {
+          contracts: 'MARCH26',
+          maturity: '30-MAR-26',
+          time: '3.6',
+          uxx: '100,006',
+          yield: '12.96%',
+          feePro: '-30.56%',
+          feeUxx: '(30,56)'
+        }
+      ],
       orderToggle: true,
       orderedNumber: [1],
       leftValue: "left: 0",
       showHelpModal: false,
+      selectedStake: 2
     };
   },
   computed: {
@@ -626,6 +652,11 @@ export default {
       this.width = window.outerWidth;
       // console.log(window, window.innerWidth, window.outerWidth)
     },
+    stakeSlideRight() {
+      const temp = this.selectedStake + 2
+      if (temp == 8) this.selectedStake = 2
+      else  this.selectedStake = temp
+    }
   },
   mounted() {
     window.addEventListener("resize", throttle(this.updateDimensions), true);

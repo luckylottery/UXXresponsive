@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="355" height="494" viewBox="0 0 355 494">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="320" height="255" fill="none"/>
+    </clipPath>
+    <filter id="Path_85" x="0" y="169" width="101" height="100.562" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feFlood flood-color="#4d4d4d" flood-opacity="0.627"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_222" data-name="Group 222" transform="translate(-8 -1960)">
+    <g id="Group_221" data-name="Group 221">
+      <g id="Rectangle_204" data-name="Rectangle 204" transform="translate(12 1960)" fill="#161616" stroke="#707070" stroke-width="1">
+        <rect width="351" height="494" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="350" height="493" rx="3.5" fill="none"/>
+      </g>
+      <g id="Group_124" data-name="Group 124" transform="translate(0 1808)">
+        <g id="Repeat_Grid_1" data-name="Repeat Grid 1" transform="translate(27.5 247)" clip-path="url(#clip-path)">
+          <g transform="translate(-163.5 -260)">
+            <line id="Line_1" data-name="Line 1" x2="752" transform="translate(163.5 260.5)" fill="none" stroke="#707070" stroke-width="1"/>
+          </g>
+          <g transform="translate(-163.5 -218)">
+            <line id="Line_1-2" data-name="Line 1" x2="752" transform="translate(163.5 260.5)" fill="none" stroke="#707070" stroke-width="1"/>
+          </g>
+          <g transform="translate(-163.5 -176)">
+            <line id="Line_1-3" data-name="Line 1" x2="752" transform="translate(163.5 260.5)" fill="none" stroke="#707070" stroke-width="1"/>
+          </g>
+          <g transform="translate(-163.5 -134)">
+            <line id="Line_1-4" data-name="Line 1" x2="752" transform="translate(163.5 260.5)" fill="none" stroke="#707070" stroke-width="1"/>
+          </g>
+          <g transform="translate(-163.5 -92)">
+            <line id="Line_1-5" data-name="Line 1" x2="752" transform="translate(163.5 260.5)" fill="none" stroke="#707070" stroke-width="1"/>
+          </g>
+          <g transform="translate(-163.5 -50)">
+            <line id="Line_1-6" data-name="Line 1" x2="752" transform="translate(163.5 260.5)" fill="none" stroke="#707070" stroke-width="1"/>
+          </g>
+          <g transform="translate(-163.5 -8)">
+            <line id="Line_1-7" data-name="Line 1" x2="752" transform="translate(163.5 260.5)" fill="none" stroke="#707070" stroke-width="1"/>
+          </g>
+        </g>
+        <rect id="Rectangle_73" data-name="Rectangle 73" width="5" height="38" transform="translate(30 461)" fill="#8227ff"/>
+        <rect id="Rectangle_73-2" data-name="Rectangle 73" width="5" height="38" transform="translate(45 461)" fill="#8227ff"/>
+        <rect id="Rectangle_73-3" data-name="Rectangle 73" width="5" height="38" transform="translate(60 461)" fill="#8227ff"/>
+        <rect id="Rectangle_73-4" data-name="Rectangle 73" width="5" height="38" transform="translate(75 461)" fill="#8227ff"/>
+        <rect id="Rectangle_73-5" data-name="Rectangle 73" width="5" height="38" transform="translate(90 461)" fill="#8227ff"/>
+        <rect id="Rectangle_73-6" data-name="Rectangle 73" width="5" height="38" transform="translate(104 461)" fill="#8227ff"/>
+        <rect id="Rectangle_73-7" data-name="Rectangle 73" width="5" height="38" transform="translate(119 461)" fill="#8227ff"/>
+        <rect id="Rectangle_73-8" data-name="Rectangle 73" width="5" height="38" transform="translate(134 461)" fill="#8227ff"/>
+        <rect id="Rectangle_73-9" data-name="Rectangle 73" width="5" height="38" transform="translate(164 461)" fill="#8227ff"/>
+        <rect id="Rectangle_73-10" data-name="Rectangle 73" width="5" height="38" transform="translate(179 461)" fill="#8227ff"/>
+        <path id="Path_86" data-name="Path 86" d="M0,55Z" transform="translate(149 444)" fill="#9a50ff"/>
+        <rect id="Rectangle_207" data-name="Rectangle 207" width="5" height="38" transform="translate(194 461)" fill="#8227ff"/>
+        <rect id="Rectangle_208" data-name="Rectangle 208" width="5" height="38" transform="translate(209 461)" fill="#8227ff"/>
+        <rect id="Rectangle_209" data-name="Rectangle 209" width="5" height="38" transform="translate(223 461)" fill="#8227ff"/>
+        <rect id="Rectangle_210" data-name="Rectangle 210" width="5" height="38" transform="translate(238 461)" fill="#8227ff"/>
+        <rect id="Rectangle_211" data-name="Rectangle 211" width="5" height="38" transform="translate(253 461)" fill="#8227ff"/>
+        <rect id="Rectangle_212" data-name="Rectangle 212" width="5" height="38" transform="translate(268 461)" fill="#8227ff"/>
+        <rect id="Rectangle_213" data-name="Rectangle 213" width="5" height="38" transform="translate(283 461)" fill="#8227ff"/>
+        <rect id="Rectangle_214" data-name="Rectangle 214" width="5" height="38" transform="translate(298 461)" fill="#8227ff"/>
+        <rect id="Rectangle_216" data-name="Rectangle 216" width="5" height="38" transform="translate(313 461)" fill="#8227ff"/>
+        <rect id="Rectangle_217" data-name="Rectangle 217" width="5" height="38" transform="translate(328 461)" fill="#8227ff"/>
+        <rect id="Rectangle_218" data-name="Rectangle 218" width="5" height="38" transform="translate(343 461)" fill="#8227ff"/>
+        <text id="_0" data-name="0" transform="translate(37 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-6.62" y="0">0</tspan></text>
+        <text id="_1" data-name="1" transform="translate(66 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-3.61" y="0">1</tspan></text>
+        <text id="_2" data-name="2" transform="translate(97 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-5.68" y="0">2</tspan></text>
+        <text id="_3" data-name="3" transform="translate(128 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-5.64" y="0">3</tspan></text>
+        <text id="_4" data-name="4" transform="translate(160 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-6.61" y="0">4</tspan></text>
+        <text id="_5" data-name="5" transform="translate(191 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-5.66" y="0">5</tspan></text>
+        <text id="_6" data-name="6" transform="translate(222 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-6.09" y="0">6</tspan></text>
+        <text id="_7" data-name="7" transform="translate(253 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-5.89" y="0">7</tspan></text>
+        <text id="_8" data-name="8" transform="translate(284 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-6.38" y="0">8</tspan></text>
+        <text id="_9" data-name="9" transform="translate(315 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-6.09" y="0">9</tspan></text>
+        <text id="_10" data-name="10" transform="translate(350 514.236)" fill="#fcfcfc" font-size="10" font-family="Montserrat-Regular, Montserrat" opacity="0.8"><tspan x="-10.23" y="0">10</tspan></text>
+        <path id="Path_20" data-name="Path 20" d="M-5327,1293.667c61.091-5.4,123.924-26.24,180.462-54.437,53.349-26.607,101.14-59.677,137.038-92.688" transform="translate(5354.5 -877.229)" fill="none" stroke="#fff" stroke-width="3"/>
+        <rect id="Rectangle_302" data-name="Rectangle 302" width="5" height="38" transform="translate(150 461)" fill="#8227ff"/>
+      </g>
+      <text id="Staking:_Even_Medium" data-name="Staking: Even Medium" transform="translate(241 2014)" fill="#fcfcfc" font-size="18" font-family="Montserrat-Bold, Montserrat" font-weight="700"><tspan x="-211.644" y="0">Staking: Even Medium</tspan></text>
+      <g id="Group_208" data-name="Group 208" transform="translate(-8770.535 1902.136)">
+        <g id="Path_83" data-name="Path 83" transform="translate(8801 484.1)" fill="#161616">
+          <path d="M 145.8298034667969 37.78107452392578 L 3.170219898223877 37.78107452392578 C 1.513779997825623 37.78107452392578 0.5 37.19525527954102 0.5 36.87625503540039 L 0.5 1.404813408851624 C 0.5 1.085813403129578 1.513779997825623 0.4999934434890747 3.170219898223877 0.4999934434890747 L 145.8298034667969 0.4999934434890747 C 147.4862213134766 0.4999934434890747 148.5 1.085813403129578 148.5 1.404813408851624 L 148.5 36.87625503540039 C 148.5 37.19525527954102 147.4862213134766 37.78107452392578 145.8298034667969 37.78107452392578 Z" stroke="none"/>
+          <path d="M 3.170196533203125 0.9999923706054688 C 1.922866821289062 0.9999923706054688 1.192581176757812 1.351299285888672 1 1.520603179931641 L 1 36.76046371459961 C 1.192581176757812 36.92976760864258 1.922866821289062 37.28107452392578 3.170196533203125 37.28107452392578 L 145.8297729492188 37.28107452392578 C 147.0771331787109 37.28107452392578 147.8074188232422 36.92976760864258 148 36.76046371459961 L 148 1.520603179931641 C 147.8074188232422 1.351299285888672 147.0771331787109 0.9999923706054688 145.8297729492188 0.9999923706054688 L 3.170196533203125 0.9999923706054688 M 3.170196533203125 -7.62939453125e-06 L 145.8297729492188 -7.62939453125e-06 C 147.5806579589844 -7.62939453125e-06 149 0.6289520263671875 149 1.404811859130859 L 149 36.87625503540039 C 149 37.65211486816406 147.5806579589844 38.28107452392578 145.8297729492188 38.28107452392578 L 3.170196533203125 38.28107452392578 C 1.419357299804688 38.28107452392578 0 37.65211486816406 0 36.87625503540039 L 0 1.404811859130859 C 0 0.6289520263671875 1.419357299804688 -7.62939453125e-06 3.170196533203125 -7.62939453125e-06 Z" stroke="none" fill="#707070"/>
+        </g>
+        <g id="Group_207" data-name="Group 207">
+          <text id="Staking" transform="translate(8817.379 506.735)" fill="#fff" font-size="12" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">Staking</tspan></text>
+          <text id="_50_" data-name="50%" transform="translate(8907.976 507.735)" fill="#d4b5ff" font-size="13" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">50%</tspan></text>
+          <g id="Path_84" data-name="Path 84" transform="translate(8966.07 484.1)" fill="#161616">
+            <path d="M 145.8298034667969 37.78107452392578 L 3.170219898223877 37.78107452392578 C 1.513779997825623 37.78107452392578 0.5 37.19525527954102 0.5 36.87625503540039 L 0.5 1.404813408851624 C 0.5 1.085813403129578 1.513779997825623 0.4999934434890747 3.170219898223877 0.4999934434890747 L 145.8298034667969 0.4999934434890747 C 147.4862213134766 0.4999934434890747 148.5 1.085813403129578 148.5 1.404813408851624 L 148.5 36.87625503540039 C 148.5 37.19525527954102 147.4862213134766 37.78107452392578 145.8298034667969 37.78107452392578 Z" stroke="none"/>
+            <path d="M 3.170196533203125 0.9999923706054688 C 1.922866821289062 0.9999923706054688 1.192581176757812 1.351299285888672 1 1.520603179931641 L 1 36.76046371459961 C 1.192581176757812 36.92976760864258 1.922866821289062 37.28107452392578 3.170196533203125 37.28107452392578 L 145.8298034667969 37.28107452392578 C 147.0771331787109 37.28107452392578 147.8074188232422 36.92976760864258 148 36.76046371459961 L 148 1.520603179931641 C 147.8074188232422 1.351299285888672 147.0771331787109 0.9999923706054688 145.8298034667969 0.9999923706054688 L 3.170196533203125 0.9999923706054688 M 3.170196533203125 -7.62939453125e-06 L 145.8298034667969 -7.62939453125e-06 C 147.5806427001953 -7.62939453125e-06 149 0.6289520263671875 149 1.404811859130859 L 149 36.87625503540039 C 149 37.65211486816406 147.5806427001953 38.28107452392578 145.8298034667969 38.28107452392578 L 3.170196533203125 38.28107452392578 C 1.419357299804688 38.28107452392578 0 37.65211486816406 0 36.87625503540039 L 0 1.404811859130859 C 0 0.6289520263671875 1.419357299804688 -7.62939453125e-06 3.170196533203125 -7.62939453125e-06 Z" stroke="none" fill="#707070"/>
+          </g>
+          <text id="Inflation" transform="translate(8982.258 506.735)" fill="#fff" font-size="12" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">Inflation</tspan></text>
+          <text id="_13.2_" data-name="13.2%" transform="translate(9068.906 507.735)" fill="#d4b5ff" font-size="13" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">13.2%</tspan></text>
+        </g>
+      </g>
+      <g id="Group_118" data-name="Group 118" transform="translate(-532 1779)">
+        <rect id="Rectangle_74" data-name="Rectangle 74" width="27" height="4" transform="translate(684.354 581)" fill="#8226fb"/>
+        <text id="Stake" transform="translate(642.646 586.5)" fill="#fcfcfc" font-size="12" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">Stake</tspan></text>
+        <rect id="Rectangle_75" data-name="Rectangle 75" width="27" height="4" transform="translate(769.354 581)" fill="#fff"/>
+        <text id="Yield" transform="translate(731.854 586.5)" fill="#fcfcfc" font-size="12" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">Yield</tspan></text>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 8, 1960)" filter="url(#Path_85)">
+        <g id="Path_85-2" data-name="Path 85" transform="translate(80 235) rotate(180)" fill="#161616">
+          <path d="M2,0H12.154V-10.562L26.967,0H57a2,2,0,0,1,2,2V46a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" stroke="none"/>
+          <path d="M 13.1539192199707 -8.620410919189453 L 13.1539192199707 0.9999961853027344 L 2 0.9999961853027344 C 1.448600769042969 0.9999961853027344 1 1.448596954345703 1 1.999996185302734 L 1 46 C 1 46.55139923095703 1.448600769042969 47 2 47 L 57 47 C 57.55139923095703 47 58 46.55139923095703 58 46 L 58 1.999996185302734 C 58 1.448596954345703 57.55139923095703 0.9999961853027344 57 0.9999961853027344 L 26.64669036865234 0.9999961853027344 L 13.1539192199707 -8.620410919189453 M 12.1539192199707 -10.56158065795898 L 26.96669006347656 -3.814697265625e-06 L 57 -3.814697265625e-06 C 58.10456848144531 -3.814697265625e-06 59 0.8954277038574219 59 1.999996185302734 L 59 46 C 59 47.10456848144531 58.10456848144531 48 57 48 L 2 48 C 0.8954315185546875 48 0 47.10456848144531 0 46 L 0 1.999996185302734 C 0 0.8954277038574219 0.8954315185546875 -3.814697265625e-06 2 -3.814697265625e-06 L 12.1539192199707 -3.814697265625e-06 L 12.1539192199707 -10.56158065795898 Z" stroke="none" fill="rgba(112,112,112,0.87)"/>
+        </g>
+      </g>
+      <g id="Ellipse_58" data-name="Ellipse 58" transform="translate(46 2158)" fill="#161616" stroke="#fff" stroke-width="1">
+        <circle cx="12.5" cy="12.5" r="12.5" stroke="none"/>
+        <circle cx="12.5" cy="12.5" r="12" fill="none"/>
+      </g>
+    </g>
+    <text id="i" transform="translate(60.49 2175.32)" fill="#fcfcfc" font-size="14" font-family="Montserrat-Bold, Montserrat" font-weight="700" opacity="0.997"><tspan x="-4.214" y="0">i</tspan></text>
+  </g>
+</svg>
