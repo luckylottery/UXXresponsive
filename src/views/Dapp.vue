@@ -633,9 +633,6 @@ export default {
       if (this.width >= 768) this.leftValue = `left: ${val1 * 2.5 - 3}px`;
       else this.leftValue = `left: ${val1 * 1.7 - 3}px`;
     },
-    width(v1, v2) {
-      console.log("dapp= ", v1, v2);
-    },
   },
   methods: {
     clickOrderButton: function (num) {
@@ -658,7 +655,6 @@ export default {
       else this.selectedStake = temp;
     },
     clickMiniChart(value, index) {
-      console.log(value, index);
       this.boxShow = true;
 
       if (this.width >= 300 && this.width < 400) {

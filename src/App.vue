@@ -138,11 +138,6 @@ export default {
     desktop: (s) => s.width > 1122,
     mobile: (s) => s.width < 771,
   },
-  watch: {
-    width(v1, v2) {
-      console.log('app = ', v1, v2)
-    }
-  },
   mounted() {
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
@@ -156,7 +151,6 @@ export default {
     },
     changeRoute(url) {
       this.$router.push(url).catch((err) => {
-        console.log("duplicate url");
       });
     },
   },
