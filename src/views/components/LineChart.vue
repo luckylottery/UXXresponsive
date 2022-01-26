@@ -134,7 +134,7 @@ export default {
           ],
           xAxes: [
             {
-              barThickness: 8 ,
+              barThickness: 8,
               gridLines: {
                 display: false,
               },
@@ -148,17 +148,13 @@ export default {
                   return value;
                 },
                 fontColor: "white",
-                rotation: 20
+                rotation: 20,
               },
-
             },
           ],
         },
         legend: {
           display: false,
-          // position: "bottom",
-          // padding: "10",
-          // align: 'left'
         },
         tooltips: {
           callbacks: {
@@ -174,7 +170,7 @@ export default {
           },
         },
         onHover: (event, chartElement) => {
-          event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
+          event.target.style.cursor = chartElement[0] ? "pointer" : "default";
         },
         responsive: true,
         maintainAspectRatio: false,
