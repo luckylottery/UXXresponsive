@@ -33,10 +33,7 @@
         <div class="yield-box box-background">
           <div class="title">yield Curve</div>
 
-          <div
-            v-if="width >= 768"
-            class="range-header justify-content-between px-4"
-          >
+          <div class="range-header justify-content-between px-4">
             <span>INFLATION</span>
             <div class="d-flex">
               <span class="me-3 inflation-span">{{ inflationValue }}</span>
@@ -92,7 +89,19 @@
               <img src="@/assets/images/circle.svg" />
             </div>
             <LineChart v-if="width >= 768"></LineChart>
-            <MiniLineChart v-else class="mini-line-chart"></MiniLineChart>
+            <MiniLineChart
+              v-else
+              class="mini-line-chart"
+              @click="clickMiniChart"
+            ></MiniLineChart>
+            <div
+              class="box-in-chart"
+              :style="boxLeftBottom"
+              v-show="boxShow && width < 768"
+            >
+              <img src="@/assets/images/box-in-chart.svg" />
+              <span>{{ chartValue }}</span>
+            </div>
             <div class="clear-y-axis"></div>
             <div class="zero-line"></div>
             <div class="chart-legend">
@@ -230,7 +239,7 @@
             </b-row>
           </div>
 
-          <div v-show="width < 768" class="ruler-container-small">
+          <div class="ruler-container-small">
             <span class="me-1 inflation-span-small">{{ inflationValue }}%</span>
             <div class="range-slider bg-ruler range-slider-small">
               <img
@@ -254,11 +263,7 @@
 
           <div class="btn-group">
             <button class="stake-btn">Stake</button>
-            <button
-              class="stake-btn withdraw-btn"
-            >
-              Withdraw
-            </button>
+            <button class="stake-btn withdraw-btn">Withdraw</button>
           </div>
         </div>
       </div>
@@ -270,7 +275,7 @@
         <div class="stake-box">
           <div class="title">my Stakes</div>
           <div class="stake-content">
-            <table class="stake-table" v-show="width >= 504">
+            <table class="stake-table stake-table-big">
               <tbody>
                 <tr class="first-tr">
                   <th class="first-cell">Contracts</th>
@@ -282,52 +287,52 @@
                   <th>Exit Fee UXX</th>
                 </tr>
                 <tr v-for="(e, i) in stakeData" :key="i">
-                  <td class="first-cell">{{e.contracts}}</td>
-                  <td>{{e.maturity}}</td>
-                  <td>{{e.time}}</td>
-                  <td>{{e.uxx}}</td>
-                  <td>{{e.yield}}</td>
-                  <td>{{e.feePro}}</td>
-                  <td>{{e.feeUxx}}</td>
+                  <td class="first-cell">{{ e.contracts }}</td>
+                  <td>{{ e.maturity }}</td>
+                  <td>{{ e.time }}</td>
+                  <td>{{ e.uxx }}</td>
+                  <td>{{ e.yield }}</td>
+                  <td>{{ e.feePro }}</td>
+                  <td>{{ e.feeUxx }}</td>
                 </tr>
               </tbody>
             </table>
-            <table class="stake-table" v-show="width < 504">
+            <table class="stake-table stake-table-small">
               <tbody>
                 <tr>
                   <th class="first-cell">Contracts</th>
-                  <td>{{stakeData[selectedStake-2].contracts}}</td>
-                  <td>{{stakeData[selectedStake-1].contracts}}</td>
+                  <td>{{ stakeData[selectedStake - 2].contracts }}</td>
+                  <td>{{ stakeData[selectedStake - 1].contracts }}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">Maturity</td>
-                  <td>{{stakeData[selectedStake-2].maturity}}</td>
-                  <td>{{stakeData[selectedStake-1].maturity}}</td>
+                  <td>{{ stakeData[selectedStake - 2].maturity }}</td>
+                  <td>{{ stakeData[selectedStake - 1].maturity }}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">Time(Years)</td>
-                  <td>{{stakeData[selectedStake-2].time}}</td>
-                  <td>{{stakeData[selectedStake-1].time}}</td>
+                  <td>{{ stakeData[selectedStake - 2].time }}</td>
+                  <td>{{ stakeData[selectedStake - 1].time }}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">UXX</td>
-                  <td>{{stakeData[selectedStake-2].uxx}}</td>
-                  <td>{{stakeData[selectedStake-1].uxx}}</td>
+                  <td>{{ stakeData[selectedStake - 2].uxx }}</td>
+                  <td>{{ stakeData[selectedStake - 1].uxx }}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">Yield</td>
-                  <td>{{stakeData[selectedStake-2].yield}}</td>
-                  <td>{{stakeData[selectedStake-1].yield}}</td>
+                  <td>{{ stakeData[selectedStake - 2].yield }}</td>
+                  <td>{{ stakeData[selectedStake - 1].yield }}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">Exit Fee %</td>
-                  <td>{{stakeData[selectedStake-2].feePro}}</td>
-                  <td>{{stakeData[selectedStake-1].feePro}}</td>
+                  <td>{{ stakeData[selectedStake - 2].feePro }}</td>
+                  <td>{{ stakeData[selectedStake - 1].feePro }}</td>
                 </tr>
                 <tr>
                   <td class="first-cell">Exit Fee UXX</td>
-                  <td>{{stakeData[selectedStake-2].feeUxx}}</td>
-                  <td>{{stakeData[selectedStake-1].feeUxx}}</td>
+                  <td>{{ stakeData[selectedStake - 2].feeUxx }}</td>
+                  <td>{{ stakeData[selectedStake - 1].feeUxx }}</td>
                 </tr>
               </tbody>
             </table>
@@ -335,7 +340,11 @@
         </div>
       </div>
 
-      <div class="stake-slide-right mb-4 mt-2" v-show="width < 504" @click="stakeSlideRight">
+      <div
+        class="stake-slide-right mb-4 mt-2"
+        v-show="width < 504"
+        @click="stakeSlideRight"
+      >
         Slide Right
         <b-icon icon="caret-right-fill"></b-icon>
       </div>
@@ -410,21 +419,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-const throttle = (func, limit = 1) => {
-  let inThrottle;
-  return function () {
-    const args = arguments;
-    const context = this;
-    if (!inThrottle) {
-      func.apply(context, args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
-    }
-  };
-};
-
-import Chart from "./Chart.vue";
 import LineChart from "./components/LineChart";
 import MiniLineChart from "./components/MiniLineChart";
 import HelpModal from "./components/Help";
@@ -567,65 +561,68 @@ export default {
       ],
       stakeData: [
         {
-          contracts: 'MARCH21',
-          maturity: '30-MAR-21',
-          time: '3.1',
-          uxx: '100,001',
-          yield: '12.91%',
-          feePro: '-30.51%',
-          feeUxx: '(30,51)'
+          contracts: "MARCH21",
+          maturity: "30-MAR-21",
+          time: "3.1",
+          uxx: "100,001",
+          yield: "12.91%",
+          feePro: "-30.51%",
+          feeUxx: "(30,51)",
         },
         {
-          contracts: 'MARCH22',
-          maturity: '30-MAR-22',
-          time: '3.2',
-          uxx: '100,002',
-          yield: '12.92%',
-          feePro: '-30.52%',
-          feeUxx: '(30,52)'
+          contracts: "MARCH22",
+          maturity: "30-MAR-22",
+          time: "3.2",
+          uxx: "100,002",
+          yield: "12.92%",
+          feePro: "-30.52%",
+          feeUxx: "(30,52)",
         },
         {
-          contracts: 'MARCH23',
-          maturity: '30-MAR-23',
-          time: '3.3',
-          uxx: '100,003',
-          yield: '12.93%',
-          feePro: '-30.53%',
-          feeUxx: '(30,53)'
+          contracts: "MARCH23",
+          maturity: "30-MAR-23",
+          time: "3.3",
+          uxx: "100,003",
+          yield: "12.93%",
+          feePro: "-30.53%",
+          feeUxx: "(30,53)",
         },
         {
-          contracts: 'MARCH24',
-          maturity: '30-MAR-24',
-          time: '3.4',
-          uxx: '100,004',
-          yield: '12.94%',
-          feePro: '-30.54%',
-          feeUxx: '(30,54)'
+          contracts: "MARCH24",
+          maturity: "30-MAR-24",
+          time: "3.4",
+          uxx: "100,004",
+          yield: "12.94%",
+          feePro: "-30.54%",
+          feeUxx: "(30,54)",
         },
         {
-          contracts: 'MARCH25',
-          maturity: '30-MAR-25',
-          time: '3.5',
-          uxx: '100,005',
-          yield: '12.95%',
-          feePro: '-30.55%',
-          feeUxx: '(30,55)'
+          contracts: "MARCH25",
+          maturity: "30-MAR-25",
+          time: "3.5",
+          uxx: "100,005",
+          yield: "12.95%",
+          feePro: "-30.55%",
+          feeUxx: "(30,55)",
         },
         {
-          contracts: 'MARCH26',
-          maturity: '30-MAR-26',
-          time: '3.6',
-          uxx: '100,006',
-          yield: '12.96%',
-          feePro: '-30.56%',
-          feeUxx: '(30,56)'
-        }
+          contracts: "MARCH26",
+          maturity: "30-MAR-26",
+          time: "3.6",
+          uxx: "100,006",
+          yield: "12.96%",
+          feePro: "-30.56%",
+          feeUxx: "(30,56)",
+        },
       ],
       orderToggle: true,
       orderedNumber: [1],
       leftValue: "left: 0",
       showHelpModal: false,
-      selectedStake: 2
+      selectedStake: 2,
+      chartValue: 0,
+      boxLeftBottom: "left: 0; bottom: 170px;",
+      boxShow: false,
     };
   },
   computed: {
@@ -635,6 +632,9 @@ export default {
     inflationValue: function (val1, val2) {
       if (this.width >= 768) this.leftValue = `left: ${val1 * 2.5 - 3}px`;
       else this.leftValue = `left: ${val1 * 1.7 - 3}px`;
+    },
+    width(v1, v2) {
+      console.log("dapp= ", v1, v2);
     },
   },
   methods: {
@@ -648,18 +648,45 @@ export default {
       if (found == -1) return "order-button";
       else return "order-button clicked-order-button";
     },
-    updateDimensions(e) {
+    handleResize() {
       this.width = window.outerWidth;
-      // console.log(window, window.innerWidth, window.outerWidth)
+      this.boxShow = false;
     },
     stakeSlideRight() {
-      const temp = this.selectedStake + 2
-      if (temp == 8) this.selectedStake = 2
-      else  this.selectedStake = temp
-    }
+      const temp = this.selectedStake + 2;
+      if (temp == 8) this.selectedStake = 2;
+      else this.selectedStake = temp;
+    },
+    clickMiniChart(value, index) {
+      console.log(value, index);
+      this.boxShow = true;
+
+      if (this.width >= 300 && this.width < 400) {
+        this.chartValue = parseInt(value);
+        this.boxLeftBottom = `left: ${-14 + index * 11}px; bottom: ${
+          170 + index * 3
+        }px;`;
+      } else if (this.width >= 400 && this.width < 504) {
+        this.chartValue = parseInt(value);
+        this.boxLeftBottom = `left: ${index * 14}px; bottom: ${
+          170 + index * 3.2
+        }px;`;
+      } else if (this.width >= 504 && this.width < 575) {
+        this.chartValue = parseInt(value);
+        this.boxLeftBottom = `left: ${index * 19}px; bottom: ${
+          170 + index * 3.2
+        }px;`;
+      } else if (this.width >= 575 && this.width < 768) {
+        this.chartValue = parseInt(value);
+        this.boxLeftBottom = `left: ${index * 19}px; bottom: ${
+          170 + index * 3.2
+        }px;`;
+      }
+    },
   },
   mounted() {
-    window.addEventListener("resize", throttle(this.updateDimensions), true);
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
   },
   components: {
     LineChart,

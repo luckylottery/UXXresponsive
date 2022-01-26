@@ -18,6 +18,8 @@ export default {
   extends: Bar,
   data() {
     return {
+      selectedIndex: -1,
+      selectedValue: null,
       chartData: {
         labels: [
           "0",
@@ -138,6 +140,7 @@ export default {
           // align: 'left'
         },
         tooltips: {
+          enabled: false,
           callbacks: {
             title: function (tooltipItem, data) {
               return "";
@@ -153,10 +156,21 @@ export default {
         onHover: (event, chartElement) => {
           event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
         },
+        onClick: (event, chartElement) => {
+          if (chartElement[0]) {
+            this.selectedIndex = chartElement[0]._index
+            this.clicked(linechart[this.selectedIndex], this.selectedIndex)
+          }
+        },
         responsive: true,
         maintainAspectRatio: false,
       },
     };
+  },
+  methods: {
+    clicked(value, index) {
+      this.$emit('click', value, index)
+    }
   },
   mounted() {
     this.renderChart(this.chartData, this.options);

@@ -65,6 +65,20 @@
   display: none;
 }
 
+.uxx-text {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+
+.dials-image {
+  width: 276px;
+}
+
+#resource {
+  margin-top: 50px;
+}
+
 @media screen and (min-width: 1280px) {
   .wrapper {
     margin: 0 auto;
@@ -344,11 +358,6 @@
     margin-left: 20px;
   }
 
-  .dials-image {
-    margin-top: 142px !important;
-    width: 276px;
-  }
-
   .infinite-image {
     height: 416px;
   }
@@ -472,6 +481,8 @@
 
   .uxx-h2-div .uxx-text {
     padding-right: 100px;
+    height: 250px;
+    overflow-y: scroll;
   }
 
   .uxx-h2-div .mprogress-bar {
@@ -524,6 +535,9 @@
 
   .stay-flex .stay-bubble {
     position: absolute;
+    width: 527px;
+    margin-left: 50px;
+    height: 543px;
   }
 
   .stay-flex .stay-background {
@@ -551,6 +565,11 @@
     max-width: 50%;
   }
 
+  .bubble-background {
+    width:560px;
+    height: 400px;
+    background: black;
+  }
 }
 
 @media screen and (max-width: 1280px) and (min-width: 760px) {
@@ -835,11 +854,6 @@
     margin-left: 20px;
   }
 
-  .dials-image {
-    margin-top: 142px !important;
-    width: 276px;
-  }
-
   .infinite-image {
     height: 250px;
   }
@@ -963,7 +977,7 @@
     margin-top: 40px;
     background-color: #707070;
     height: 4px;
-    width: 125%; /*merge*/
+    width: 100%; /*merge*/
   }
 
   .uxx-h2-div .mprogress-bar .progress-bar {
@@ -1009,6 +1023,7 @@
   .stay-flex .stay-bubble {
     position: absolute;
     width: 370px;
+    height: 381px;
   }
 
   .stay-flex .stay-background {
@@ -1039,6 +1054,12 @@
   #charts .arrow div {
     border-right-color: #b179ff;
     border-left-color: #b179ff;
+  }
+  
+  .bubble-background {
+    width: 370px;
+    height: 400px;
+    background: black;
   }
 }
 
@@ -1342,11 +1363,6 @@
     margin-left: 20px;
   }
 
-  .dials-image {
-    margin-top: 40px !important;
-    width: 276px;
-  }
-
   .infinite-image {
     height: 250px;
   }
@@ -1546,10 +1562,11 @@
   }
 
   .img-wrapper .stay-bubble {
-    width: 50%;
-    margin-left: 25%;
+    width: 70%;
+    margin-left: 15%;
     position: absolute;
     left: 0;
+    max-width: 400px;
   }
 
   #tokennomics_phone {
@@ -1650,6 +1667,12 @@
     border-right-color: #b179ff !important;
     border-left-color: #b179ff !important;
   }
+
+  .bubble-background {
+    width: 100%;
+    height: 339px;
+    background: black;
+  }
 }
 
 .left-arrow {
@@ -1680,4 +1703,14 @@
   top: 35%;
   left: 3px;
   cursor: pointer;
+}
+
+.uxx-text::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.uxx-text {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

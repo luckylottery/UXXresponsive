@@ -13,7 +13,54 @@
   padding-right: 12px;
 }
 
+.home-header {  
+  height: 55px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #fcfcfc;
+  border: 2px solid #404040;
+  border-radius: 4px 4px;
+  justify-content: space-between;
+  display: none;
+}
+
+.range-header {
+  display: none;
+}
+
+.stake-table {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: Montserrat-Regular;
+  display: none;
+}
+
+.ruler-container-small {
+  border: 1px solid gray;
+  margin: 30px 12px 0;
+  padding: 8px 0;
+  border-radius: 28px;
+  display: none;
+  font-size: 11px;
+  justify-content: center;
+  text-align: center;
+}
+
 @media screen and (min-width: 1280px) {
+  .stake-table-big {
+    display: table;
+  }
+
+  .home-header {
+    display: flex;
+  }
+
+  .range-header {
+    display: flex;
+  }
+
   .up-container {
     display: flex;
   }
@@ -65,9 +112,27 @@
   .order-box .btn-group {
     margin-top: 40px;
   }
+
+
+
+
+
+
 }
 
 @media screen and (max-width: 1400px) and (min-width: 1200px) {
+  .stake-table-big {
+    display: table;
+  }
+
+  .home-header {
+    display: flex;
+  }
+
+  .range-header {
+    display: flex;
+  }
+
   .yield-box .zero-line {
     position: absolute;
     border-bottom: 3px solid gray;
@@ -94,6 +159,18 @@
 }
 
 @media screen and (max-width: 1200px) and (min-width: 992px) {
+  .stake-table-big {
+    display: table;
+  }
+
+  .home-header {
+    display: flex;
+  }
+
+  .range-header {
+    display: flex;
+  }
+
   .yield-box .zero-line {
     position: absolute;
     border-bottom: 3px solid gray;
@@ -125,6 +202,18 @@
 }
 
 @media screen and (max-width: 992px) and (min-width: 768px) {
+  .stake-table-big {
+    display: table;
+  }
+
+  .home-header {
+    display: flex;
+  }
+
+  .range-header {
+    display: flex;
+  }
+  
   .yield-box .zero-line {
     position: absolute;
     border-bottom: 3px solid gray;
@@ -161,6 +250,14 @@
 }
 
 @media screen and (max-width: 767px) and (min-width: 575px) {
+  .ruler-container-small {
+    display: flex;
+  }
+
+  .stake-table-big {
+    display: table;
+  }
+
   .up-container {
     max-width: 480px;
     margin: 0 auto;
@@ -219,7 +316,16 @@
   }
 }
 
-@media screen and (max-width: 575px) and (min-width: 504px) {
+@media screen and (max-width: 574px) and (min-width: 504px) {
+ 
+  .ruler-container-small {
+    display: block;
+  }
+
+  .stake-table-big {
+    display: table;
+  }
+
   .up-container {
     max-width: 480px;
     margin: 0 auto;
@@ -279,6 +385,14 @@
 }
 
 @media screen and (max-width: 503px) and (min-width: 400px) {
+  .ruler-container-small {
+    display: flex;
+  }
+
+  .stake-table-small {
+    display: table;
+  }
+
   .up-container {
     max-width: 380px;
     margin: 0 auto;
@@ -335,6 +449,14 @@
 }
 
 @media screen and (max-width: 399px) and (min-width: 350px) {
+  .ruler-container-small {
+    display: flex;
+  }
+
+  .stake-table-small {
+    display: table;
+  }
+
   .up-container {
     max-width: 300px;
     margin: 0 auto;
@@ -437,6 +559,14 @@
 }
 
 @media screen and (max-width: 349px) and (min-width: 300px) {
+  .ruler-container-small {
+    display: flex;
+  }
+
+  .stake-table-small {
+    display: table;
+  }
+
   .up-container {
     max-width: 280px;
     margin: 0 auto;
@@ -606,13 +736,6 @@
   height: 30px;
 }
 
-.stake-table {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  font-family: Montserrat-Regular;
-}
-
 .stake-table td {
   border-left: 2px solid #404040;
   font-size: 12px;
@@ -649,17 +772,6 @@
   margin-right: 1rem;
 }
 
-.home-header {
-  height: 55px;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  color: #fcfcfc;
-  border: 2px solid #404040;
-  border-radius: 4px 4px;
-  justify-content: space-between;
-}
-
 .yield-box {
   border: 2px solid #404040;
   border-radius: 4px 4px;
@@ -669,17 +781,6 @@
 
 .yield-box .chart-legend span {
   font-size: 12px;
-}
-
-.ruler-container-small {
-  border: 1px solid gray;
-  margin: 30px 12px 0;
-  padding: 8px 0;
-  border-radius: 28px;
-  display: flex;
-  font-size: 11px;
-  justify-content: center;
-  text-align: center;
 }
 
 .input-slider {
@@ -935,4 +1036,17 @@
 
 .withdraw-btn {
   background-color: rgba(109, 30, 218, 0.4);
+}
+
+.box-in-chart {
+  position: absolute;
+  left: -20px;
+  z-index: 9;
+}
+
+.box-in-chart span {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  font-size: 14px;
 }

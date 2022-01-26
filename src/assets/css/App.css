@@ -58,8 +58,8 @@
 }
 
 .dropdown-menu li {
-  border-bottom: 1px solid #303030;
-  padding: 10px 0;
+  /* border-bottom: 1px solid #303030;
+  padding: 10px 0; */
 }
 
 .dropdown-menu li a:hover {
@@ -69,7 +69,7 @@
 
 .dropdown-menu li a {
   color: #d4b5ff;
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 
 .stake-content {
