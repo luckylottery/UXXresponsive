@@ -33,7 +33,9 @@
         <div class="yield-box box-background">
           <div class="title">yield Curve</div>
 
-          <div class="range-header justify-content-between px-4">
+          <div
+            class="range-header justify-content-between px-4"
+          >
             <span>INFLATION</span>
             <div class="d-flex">
               <span class="me-3 inflation-span">{{ inflationValue }}</span>
@@ -94,11 +96,7 @@
               class="mini-line-chart"
               @click="clickMiniChart"
             ></MiniLineChart>
-            <div
-              class="box-in-chart"
-              :style="boxLeftBottom"
-              v-show="boxShow && width < 768"
-            >
+            <div class="box-in-chart" :style="boxLeftBottom" v-show="boxShow && width < 768">
               <img src="@/assets/images/box-in-chart.svg" />
               <span>{{ chartValue }}</span>
             </div>
@@ -419,6 +417,7 @@
 </template>
 
 <script>
+
 import LineChart from "./components/LineChart";
 import MiniLineChart from "./components/MiniLineChart";
 import HelpModal from "./components/Help";
@@ -621,8 +620,8 @@ export default {
       showHelpModal: false,
       selectedStake: 2,
       chartValue: 0,
-      boxLeftBottom: "left: 0; bottom: 170px;",
-      boxShow: false,
+      boxLeftBottom: 'left: 0; bottom: 170px;',
+      boxShow: false
     };
   },
   computed: {
@@ -647,7 +646,7 @@ export default {
     },
     handleResize() {
       this.width = window.outerWidth;
-      this.boxShow = false;
+      this.boxShow = false
     },
     stakeSlideRight() {
       const temp = this.selectedStake + 2;
@@ -655,33 +654,25 @@ export default {
       else this.selectedStake = temp;
     },
     clickMiniChart(value, index) {
-      this.boxShow = true;
+      this.boxShow = true
 
       if (this.width >= 300 && this.width < 400) {
         this.chartValue = parseInt(value);
-        this.boxLeftBottom = `left: ${-14 + index * 11}px; bottom: ${
-          170 + index * 3
-        }px;`;
+        this.boxLeftBottom = `left: ${-14 + index * 11}px; bottom: ${170 + index * 3}px;`
       } else if (this.width >= 400 && this.width < 504) {
         this.chartValue = parseInt(value);
-        this.boxLeftBottom = `left: ${index * 14}px; bottom: ${
-          170 + index * 3.2
-        }px;`;
+        this.boxLeftBottom = `left: ${index * 14}px; bottom: ${170 + index * 3.2}px;`
       } else if (this.width >= 504 && this.width < 575) {
         this.chartValue = parseInt(value);
-        this.boxLeftBottom = `left: ${index * 19}px; bottom: ${
-          170 + index * 3.2
-        }px;`;
+        this.boxLeftBottom = `left: ${index * 19}px; bottom: ${170 + index * 3.2}px;`
       } else if (this.width >= 575 && this.width < 768) {
         this.chartValue = parseInt(value);
-        this.boxLeftBottom = `left: ${index * 19}px; bottom: ${
-          170 + index * 3.2
-        }px;`;
+        this.boxLeftBottom = `left: ${index * 19}px; bottom: ${170 + index * 3.2}px;`
       }
     },
   },
   mounted() {
-    window.addEventListener("resize", this.handleResize);
+    window.addEventListener('resize', this.handleResize);
     this.handleResize();
   },
   components: {
